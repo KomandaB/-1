@@ -37,7 +37,6 @@ void Station::setWasVisited(bool value)
 
 QVector<int> Station::getStationsToMove() const
 {
-
     return stationsToMove;
 }
 
@@ -46,13 +45,13 @@ QVector<int> Station::getCharactersId() const
     return charactersId;
 }
 
-int Station::getPreviousStationId() const
-{
+//int Station::getPreviousStationId() const
+//{
 
-    return previousStationId;
-}
+//    return previousStationId;
+//}
 
-void Station::setPreviousStationId(int value)
-{
-    previousStationId = value;
-}
+//void Station::setPreviousStationId(int value)
+//{
+//    previousStationId = value;
+//}

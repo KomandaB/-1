@@ -31,7 +31,9 @@ SOURCES += \
     gamehandler.cpp \
     character.cpp \
     character.cpp \
-    gameentites.cpp
+    gameentites.cpp \
+    main.cpp \
+    player.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -40,7 +42,8 @@ HEADERS += \
     gamehandler.h \
     badcharacter.h \
     character.h \
-    gaameentites.h
+    gaameentites.h \
+    player.h
         goodcharacter.h \
 
 

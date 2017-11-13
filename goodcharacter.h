@@ -12,7 +12,7 @@ public://Надо ли нам хранить станцию на котоой н
     GoodCharacter(int _GoodCharacterId, QString _GoodCharacterName);
     int getGoodCharacterId() const;
 
-    QString getGoodCharacterName() const;//возвращает строку, имя теущей станции
+    QString getGoodCharacterName() const;//возвращает строку, имя текущего человека
 private:
     int GoodCharacterId;//
     QString GoodCharacterName;

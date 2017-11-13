@@ -9,12 +9,12 @@ class GameEntites
 public:
     GameEntites();
     GoodCharacter* getGoodCharacterById(int charId);
-    BadCharacter* getBadCharacterById(int charId);
+    BadCharacter *getBadCharacterById(int charId);
     Station* getStationById(int stationId);
-    void initGame();//почму станции являются публичными, а люди приватными
+    void initGame();//почему станции являются публичными, а люди приватными
 private:
     QHash<int, Station> StationsMap;
-    QHash<int, GoodCharacter> goodCharactersMap;
+    QHash<int, GoodCharacter> GoodCharactersMap;
     QHash<int, BadCharacter> BadCharactersMap;
 
     void initCharacters();

@@ -28,6 +28,7 @@ private:// только для этого класса
     QVector<int> stationsToMove;//определяется через функцию на основании ID
     QVector<int> charactersId;//определяется через функцию через рандом
     int previousStationId;//приходит как входной папаметр
+    //строка с описанием
 
 
 };

@@ -13,6 +13,7 @@ private:
     int idFirstStation;//номер первой станции
     int idFinalStation;//номер последней станции
     int currentStationId;// текущая станция, на которой находимся
+    int currentGoodCharacterId;
     GameEntites entites;//объект
 
 };

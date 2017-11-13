@@ -5,6 +5,24 @@ GameEntites::GameEntites()
 
 }
 
+GoodCharacter *GameEntites::getGoodCharacterById(int charId)
+{
+    if (GoodCharactersMap.contains(charId)){
+        return &GoodCharactersMap[charId];
+    } else {
+        return nullptr;
+    }
+}
+
+BadCharacter *GameEntites::getBadCharacterById(int charId)
+{
+    if (BadCharactersMap.contains(charId)){
+        return &BadCharactersMap[charId];
+    } else {
+        return nullptr;
+    }
+}
+
 Station *GameEntites::getStationById(int stationId)
 {
     if (StationsMap.contains(stationId)){
@@ -37,8 +55,15 @@ void GameEntites::initGame()
 
 void GameEntites::initCharacters()
 {
-    goodCharactersMap[0] = GoodCharacter(0,"Ivan");
-    goodCharactersMap[1] = GoodCharacter(1,"Makcim");
+//    QVector<int> charIds;
+//    charIds.push_back(0);
+    GoodCharactersMap[0] = GoodCharacter(0,"Ivan");
+
+
+    GoodCharactersMap[1] = GoodCharacter(1,"Makcim");
+
+
+    //BadCharactersMap[0] = BadCharacter(0,"Misha");
 
     //TODO: INITIALISE MORE
 }
