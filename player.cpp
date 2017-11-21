@@ -1,6 +1,6 @@
 #include "player.h"
 
-player::player()
+Player::Player()
 {
 
 }

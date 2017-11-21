@@ -1,7 +1,7 @@
 #include "gamehandler.h"
-#include"player.h"
 GameHandler::GameHandler()
 {
+     steve=new Player;
 
 }
 
@@ -13,31 +13,32 @@ void GameHandler::startNewGame()
     currentStationId = 0;
     currentGoodCharacterId = 0;
 
+
     //Здесь должны быть описаны все станции, люди, объекты   ???
     do
     {
 
         // разделение на станции и переходы
-
-        switch (player.position) {
-        case 1:
+        switch (steve->position) {
+        case 1: {
             Station *currentStation = entites.getStationById(currentStationId);//объект текущей станции
             if (currentStation == nullptr){
              //exit from game (error)
             }
             //здесь должны получить все от станции и вывести в правильное место
             for (int it : currentStation->getStationsToMove()){//выыод следущих станций (предложеные варинты)
-                send to Graphic class value of entites.getStationById(it);
+                //send to Graphic class value of entites.getStationById(it);
                 //создаем кнопку для каждой
 
             }
-            cout<<"Вы находитесь на станции"<<
             //
 
 
 
             break;
+        }
         case 2:
+            break;
 
         default:
             break;

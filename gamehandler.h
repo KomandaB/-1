@@ -3,12 +3,14 @@
 
 #include <QObject>
 #include <QHash>
-#include <gameentites.h>
+#include "player.h"
+#include "gameentites.h"
 class GameHandler
 {
 public:
     GameHandler();
     void startNewGame();
+    Player* steve;
 private:
     int idFirstStation;//номер первой станции
     int idFinalStation;//номер последней станции

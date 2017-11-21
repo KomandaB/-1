@@ -2,17 +2,11 @@
 #define PLAYER_H
 
 
-class player
+class Player
 {
 public:
-    player();
-    int HP;//1-100
-     int atac;
-     int def;
-     int speed;
-     int point;
-     int position;//1 станция 2 диалог 3 переход 4 бой
-
-
+    Player();
+    int position = 0;
+};
 
 #endif // PLAYER_H

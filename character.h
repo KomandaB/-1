@@ -11,7 +11,7 @@ struct CharacterResponse{
 class Character
 {
 public:
-    Character();
+    Character() {}
 protected:
     int characterId;
     QString characterName;
