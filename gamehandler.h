@@ -11,13 +11,15 @@ public:
     GameHandler();
     void startNewGame();
     Player* steve;
-private:
+    GameEntites *getEntites() const;
+
+
     int idFirstStation;//номер первой станции
     int idFinalStation;//номер последней станции
     int currentStationId;// текущая станция, на которой находимся
     int currentGoodCharacterId;
-    GameEntites entites;//объект
-
+    GameEntites *entites;//объект
+private:
 };
 
 #endif // GAMEHANDLER_H

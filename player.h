@@ -6,7 +6,7 @@ class Player
 {
 public:
     Player();
-    int position = 0;
+    int position = 2;
 };
 
 #endif // PLAYER_H

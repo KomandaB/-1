@@ -12,11 +12,11 @@ public:
     BadCharacter *getBadCharacterById(int charId);
     Station* getStationById(int stationId);
     void initGame();//почему станции являются публичными, а люди приватными
-private:
+
     QHash<int, Station> StationsMap;
     QHash<int, GoodCharacter> GoodCharactersMap;
     QHash<int, BadCharacter> BadCharactersMap;
-
+private:
     void initCharacters();
 };
 

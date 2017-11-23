@@ -5,11 +5,13 @@ Station::Station()
 
 }
 
-Station::Station(int _stationId, QString _stationName, const QVector<int> &_stationsToMove, const QVector<int> &_charactersId) :
+Station::Station(int _stationId, QString _stationName, const QVector<int> &_stationsToMove, const QVector<int> &_charactersId,QString _stationInformation) :
     stationId(_stationId),
     stationName(_stationName),
     stationsToMove(_stationsToMove),//копируем
-    charactersId(_charactersId)
+    charactersId(_charactersId),
+    stationInformation(_stationInformation)
+
 {
 }
 
@@ -43,6 +45,12 @@ QVector<int> Station::getStationsToMove() const
 QVector<int> Station::getCharactersId() const
 {
     return charactersId;
+}
+QString Station::getStationInformation() const
+{
+
+    // сюда больше ничего не надо добавлять
+    return stationInformation;
 }
 
 //int Station::getPreviousStationId() const

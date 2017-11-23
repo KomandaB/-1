@@ -29,23 +29,37 @@ SOURCES += \
     station.cpp \
     gamehandler.cpp \
     character.cpp \
-    character.cpp \
     gameentites.cpp \
     main.cpp \
     mainwindow.cpp \
-    player.cpp
+    player.cpp \
+    dialogwindow.cpp \
+    gamemap.cpp \
+    mainmenu.cpp \
+    settings.cpp \
 
 HEADERS += \
     goodcharacter.h \
-    station.h \
-    gamehandler.h \
     badcharacter.h \
     character.h \
-    gaameentites.h \
-    goodcharacter.h \
+    dialogwindow.h \
+    gameentites.h \
+    gamehandler.h \
+    gamemap.h \
+    mainmenu.h \
     mainwindow.h \
-    player.h
+    player.h \
+    settings.h \
+    station.h
 
 
 FORMS += \
+    dialogwindow.ui \
+    gamemap.ui \
+    mainmenu.ui \
     mainwindow.ui
+
+SUBDIRS += \
+    game1.pro
+
+DISTFILES +=

@@ -6,10 +6,11 @@ class Station
 {
 public:// то к чему мы можем обращаться из других классов( подключив данный класс через incude)
     Station();//???
-    Station(int _stationId, QString _stationName, const QVector<int>& _stationsToMove, const QVector<int>& _charactersId);
+    Station(int _stationId, QString _stationName, const QVector<int>& _stationsToMove, const QVector<int>& _charactersId, QString _stationInformation);
     int getStationId() const;//как это работает??
 
-    QString getStationName() const;//возвращает строку, имя теущей станции
+    QString getStationName() const;//возвращает строку, имя теущей станци
+    QString getStationInformation() const;
 
     bool getWasVisited() const;
     void setWasVisited(bool value);//value???
@@ -24,6 +25,7 @@ public:// то к чему мы можем обращаться из други�
 private:// только для этого класса
     int stationId;//
     QString stationName;// определяется через функцию
+    QString stationInformation;
     bool wasVisited  = false;// всегда изменяется на true после проверки
     QVector<int> stationsToMove;//определяется через функцию на основании ID
     QVector<int> charactersId;//определяется через функцию через рандом

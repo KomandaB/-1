@@ -2,12 +2,14 @@
 GameHandler::GameHandler()
 {
      steve=new Player;
+     entites= new GameEntites;
+     entites->initGame();//происходит создание всех станций и людей
 
 }
 
 void GameHandler::startNewGame()
 {
-    entites.initGame();
+
     idFirstStation = 0;
     idFinalStation = 1;
     currentStationId = 0;
@@ -18,32 +20,32 @@ void GameHandler::startNewGame()
     do
     {
 
-        // разделение на станции и переходы
-        switch (steve->position) {
-        case 1: {
-            Station *currentStation = entites.getStationById(currentStationId);//объект текущей станции
-            if (currentStation == nullptr){
-             //exit from game (error)
-            }
-            //здесь должны получить все от станции и вывести в правильное место
-            for (int it : currentStation->getStationsToMove()){//выыод следущих станций (предложеные варинты)
-                //send to Graphic class value of entites.getStationById(it);
-                //создаем кнопку для каждой
+//        // разделение на станции и переходы
+//        switch (steve->position) {
+//        case 1: {
+//            Station *currentStation = entites->getStationById(currentStationId);//объект текущей станции
+//            if (currentStation == nullptr){
+//             //exit from game (error)
+//            }
+//            //здесь должны получить все от станции и вывести в правильное место
+//            for (int it : currentStation->getStationsToMove()){//выыод следущих станций (предложеные варинты)
+//                //send to Graphic class value of entites.getStationById(it);
+//                //создаем кнопку для каждой
 
-            }
-            //
+//            }
+//            //
 
 
 
-            break;
-        }
-        case 2:
-            break;
+//            break;
+//        }
+//        case 2:
+//            break;
 
-        default:
-            break;
-        }
-        Station *currentStation = entites.getStationById(currentStationId);//объект текущей станции
+//        default:
+//            break;
+//        }
+        Station *currentStation = entites->getStationById(currentStationId);//объект текущей станции
         if (currentStation == nullptr){
          //exit from game (error)
         }
@@ -61,9 +63,15 @@ void GameHandler::startNewGame()
 
         //после создания всех станций и людей мы переходим непосредственно к выполнению программы
         //1 надо понять где мы находимся и прейти в разные функции через switch(функции в этом же классе???)
-
+currentStationId++;
 
     }while(currentStationId != idFinalStation);//пока теущая станция !=финальной
 
+
+}
+
+GameEntites *GameHandler::getEntites() const
+{
+    return entites;
 
 }

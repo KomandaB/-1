@@ -15,6 +15,7 @@ public:
 protected:
     int characterId;
     QString characterName;
+
 /*private:
     int characterId;
     QString characterName;
