@@ -28,7 +28,18 @@ void GoodCharacter::setGoodCharacterPhrases(QString text)
 //Функция наполнения фраз героя. На вход подаётся текст персонажа в одной строке, каждая фраза
 //которого дополняется разделителем "next" (без кавычек).
 {
-    _GoodCharacterPhrases = text.split("next");
+    GoodCharacterPhrases = text.split("next");
+
+}
+
+void GoodCharacter::talkToCharacter(QString name){
+    name.GoodCharacterPhrases[];
+    int i = 0;
+    while(i < name.GoodCharacterPhrases.length()){
+        //Передаем одну фразу в диалоговое окно, ждем рекции игрока
+
+        i++;
+    }
 
 }
 
