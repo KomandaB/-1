@@ -9,9 +9,8 @@ public://Надо ли нам хранить станцию на котоой н
 
     CharacterResponse makeDecision(int answerId);
     GoodCharacter();
-    GoodCharacter(int _GoodCharacterId, QString _GoodCharacterName);
+    GoodCharacter(int _GoodCharacterId, QString _GoodCharacterName,  QStringList _GoodCharacterPhrases);
     int getGoodCharacterId() const;
-
     QString getGoodCharacterName() const;//возвращает строку, имя текущего человека
 private:
     int GoodCharacterId;//
