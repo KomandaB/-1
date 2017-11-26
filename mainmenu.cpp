@@ -7,9 +7,8 @@ MainMenu::MainMenu(QWidget *parent) :
 {
     ui->setupUi(this);
     connect(ui->newGameBtn, &QPushButton::clicked, this, &MainMenu::startNewGameSlot);
-    connect(ui->exitBtn, &QPushButton::clicked, this, [=](){emit closeApp();});//добавить выход
+    connect(ui->exitBtn, &QPushButton::clicked, this, [=](){emit closeApp();});
 }
-
 MainMenu::~MainMenu()
 {
     delete ui;
@@ -17,5 +16,5 @@ MainMenu::~MainMenu()
 
 void MainMenu::startNewGameSlot()
 {
-    emit stateChanged(GraphicStates::GAME_MAP);
+    emit stateChanged(GraphicStates::GAME_MAP,0);
 }

@@ -5,7 +5,7 @@
 #include <QStackedWidget>
 #include "settings.h"
 #include "dialogwindow.h"
-#include "gamemap.h"
+#include "stationwindow.h"
 #include "mainmenu.h"
 #include "gameentites.h"
 #include "gamehandler.h"
@@ -29,11 +29,11 @@ private:
     Ui::MainWindow *ui;
     GraphicStates currentState = GraphicStates::MAIN_MENU;
     DialogWindow *dialogWindow;
-    GameMap *gameMap;
+    StationWindow *stationWindow;
     MainMenu *mainMenu;
     QStackedWidget *windowHandler;
 public slots:
-    void stateChangedSlot(GraphicStates newState);
+    void stateChangedSlot(GraphicStates newState,int ID);
 
 };
 

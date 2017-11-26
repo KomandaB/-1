@@ -34,9 +34,9 @@ SOURCES += \
     mainwindow.cpp \
     player.cpp \
     dialogwindow.cpp \
-    gamemap.cpp \
     mainmenu.cpp \
     settings.cpp \
+    stationwindow.cpp
 
 HEADERS += \
     goodcharacter.h \
@@ -45,12 +45,12 @@ HEADERS += \
     dialogwindow.h \
     gameentites.h \
     gamehandler.h \
-    gamemap.h \
     mainmenu.h \
     mainwindow.h \
     player.h \
     settings.h \
-    station.h
+    station.h \
+    stationwindow.h
 
 
 FORMS += \

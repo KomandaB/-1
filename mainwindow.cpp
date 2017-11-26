@@ -8,15 +8,17 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     gameHandler=new GameHandler;
     dialogWindow = new DialogWindow(this);
-    gameMap = new GameMap(this,gameHandler->getEntites());
+    stationWindow = new StationWindow(this,gameHandler->getEntites());
     mainMenu = new MainMenu(this);
     windowHandler = new QStackedWidget(this);
     windowHandler->addWidget(mainMenu);
-    windowHandler->addWidget(gameMap);
+    windowHandler->addWidget(stationWindow);
     windowHandler->addWidget(dialogWindow);
     this->setCentralWidget(windowHandler);
     connect(dialogWindow, &DialogWindow::stateChanged, this, &MainWindow::stateChangedSlot);
-    connect(gameMap, &GameMap::stateChanged, this, &MainWindow::stateChangedSlot);
+    connect(stationWindow, &StationWindow::stateChanged, this, &MainWindow::stateChangedSlot);
+    //connect();
+    //
     connect(mainMenu, &MainMenu::stateChanged, this, &MainWindow::stateChangedSlot);
     connect(mainMenu, &MainMenu::closeApp, this, &MainWindow::close);
 
@@ -27,7 +29,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::stateChangedSlot(GraphicStates newState)
+void MainWindow::stateChangedSlot(GraphicStates newState, int ID)
 {
     currentState = newState;
     switch(currentState){
@@ -36,7 +38,8 @@ void MainWindow::stateChangedSlot(GraphicStates newState)
         break;
     }
     case GraphicStates::GAME_MAP: {
-        windowHandler->setCurrentWidget(gameMap);
+        stationWindow->ChangeStation(ID);
+        windowHandler->setCurrentWidget(stationWindow);
         break;
     }
     case GraphicStates::DIALOG: {

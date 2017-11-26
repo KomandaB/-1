@@ -12,7 +12,8 @@ void GameHandler::startNewGame()
 
     idFirstStation = 0;
     idFinalStation = 1;
-    currentStationId = 0;
+    currentStationId = 1;// ни на что не влияет, СЮДА вообще не заходит, как я понял
+
     currentGoodCharacterId = 0;
 
 
@@ -63,9 +64,7 @@ void GameHandler::startNewGame()
 
         //после создания всех станций и людей мы переходим непосредственно к выполнению программы
         //1 надо понять где мы находимся и прейти в разные функции через switch(функции в этом же классе???)
-currentStationId++;
-
-    }while(currentStationId != idFinalStation);//пока теущая станция !=финальной
+ }while(currentStationId != idFinalStation);//пока теущая станция !=финальной
 
 
 }
