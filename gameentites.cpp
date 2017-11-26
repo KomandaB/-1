@@ -36,23 +36,33 @@ void GameEntites::initGame()
 {
     initCharacters();
     QVector<int> stationIds;
-    stationIds.push_back(1);//количество следующих станций
-
+    stationIds.push_back(1);
     QVector<int> charIds;
     charIds.push_back(0);//добавляется значение
     StationsMap[0] = Station(0, "Start", stationIds, charIds,"Это первая станция на которую я попал,далее мне придется выжить в тяжолой среде метро");
    //---------------------------------------------------------------------------
     stationIds.clear();//почему не очищаем вектор людей?
-    stationIds.push_back(1);
     stationIds.push_back(2);
+    stationIds.push_back(3);
     //зачем мне это если я сразу могу написать ниже,, что прописывается в скобках
     charIds.push_back(1);
-    StationsMap[1] = Station(1, "Kievskay", stationIds, charIds,"Наконец то я добрался до этой станции ");
+    StationsMap[1] = Station(1, "вторая", stationIds, charIds,"Наконец то я добрался до этой станции ");
+    //---------------------------------------------------------------------------
+     stationIds.clear();//почему не очищаем вектор людей?
+     stationIds.push_back(3);
+    //зачем мне это если я сразу могу написать ниже,, что прописывается в скобках
+     charIds.push_back(1);
+     StationsMap[2] = Station(2, "третья", stationIds, charIds,"Наконец то я добрался до этой станции ");
+     //---------------------------------------------------------------------------
+      stationIds.clear();//почему не очищаем вектор людей?
+      stationIds.push_back(4);
+      //зачем мне это если я сразу могу написать ниже,, что прописывается в скобках
+      charIds.push_back(1);
+      StationsMap[3] = Station(3, "четвертая", stationIds, charIds,"Наконец то я добрался до этой станции ");
     //---------------------------------------------------------------------------
     stationIds.clear();//почему не очищаем вектор людей?
-    stationIds.push_back(0);
     charIds.push_back(1);
-    StationsMap[2] = Station(2, "Finish", stationIds, charIds," Вот мое путеществие и закончено И выбираюсь на свет ");
+    StationsMap[4] = Station(4, "Finish", stationIds, charIds," Вот мое путеществие и закончено И выбираюсь на свет ");
 //---------------------------
 
 }

@@ -21,7 +21,7 @@ private:
 private slots:
     void startNewGameSlot();
 signals:
-    void stateChanged(GraphicStates newState);
+    void stateChanged(GraphicStates newState,int id);
     void closeApp();
 };
 

@@ -40,6 +40,8 @@ void Station::setWasVisited(bool value)
 QVector<int> Station::getStationsToMove() const
 {
     return stationsToMove;
+
+
 }
 
 QVector<int> Station::getCharactersId() const

@@ -23,10 +23,13 @@
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="3" column="0">
-     <widget class="QPushButton" name="point_1_btn">
+    <item row="6" column="0" colspan="2">
+     <layout class="QGridLayout" name="gridLayout_2"/>
+    </item>
+    <item row="3" column="2">
+     <widget class="QPushButton" name="toMenuBtn">
       <property name="text">
-       <string/>
+       <string>Вернуться в меню</string>
       </property>
      </widget>
     </item>
@@ -41,46 +44,8 @@ p, li { white-space: pre-wrap; }
       </property>
      </widget>
     </item>
-    <item row="4" column="0">
-     <widget class="QPushButton" name="point_2_btn">
-      <property name="text">
-       <string/>
-      </property>
-      <property name="autoDefault">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="7" column="2">
-     <widget class="QPushButton" name="toMenuBtn">
-      <property name="text">
-       <string>Back to menu</string>
-      </property>
-     </widget>
-    </item>
-    <item row="7" column="0">
-     <widget class="QPushButton" name="point_3_btn">
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="1">
-     <widget class="QLabel" name="label_2">
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1">
-     <widget class="QLabel" name="label">
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="7" column="1">
-     <widget class="QLabel" name="label_3">
+    <item row="3" column="0">
+     <widget class="QPushButton" name="point_1_btn">
       <property name="text">
        <string/>
       </property>
@@ -97,15 +62,8 @@ p, li { white-space: pre-wrap; }
       </property>
      </widget>
     </item>
-    <item row="8" column="0">
-     <widget class="QPushButton" name="point_4_btn">
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="8" column="1">
-     <widget class="QLabel" name="label_4">
+    <item row="3" column="1">
+     <widget class="QLabel" name="label">
       <property name="text">
        <string/>
       </property>
