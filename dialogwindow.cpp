@@ -21,12 +21,12 @@ DialogWindow::~DialogWindow()
 
 void DialogWindow::goToMenuSlot()
 {
-    emit stateChanged(GraphicStates::MAIN_MENU);
+    emit stateChanged(GraphicStates::MAIN_MENU,0);
 }
 
 void DialogWindow::goToMapSlot()
 {
-    emit stateChanged(GraphicStates::GAME_MAP);
+    emit stateChanged(GraphicStates::GAME_MAP,0);
 }
 
 void DialogWindow::on_var1_clicked()

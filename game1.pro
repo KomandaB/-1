@@ -36,7 +36,16 @@ SOURCES += \
     dialogwindow.cpp \
     mainmenu.cpp \
     settings.cpp \
-    stationwindow.cpp
+    stationwindow.cpp \
+    wingame.cpp \
+    faitwindow.cpp \
+    armor.cpp \
+    agilitycharacters.cpp \
+    passivecharacters.cpp \
+    player_level.cpp \
+    strengthcharacters.cpp \
+    weapons.cpp \
+    equipment.cpp
 
 HEADERS += \
     goodcharacter.h \
@@ -50,14 +59,26 @@ HEADERS += \
     player.h \
     settings.h \
     station.h \
-    stationwindow.h
+    stationwindow.h \
+    wingame.h \
+    wingame.h \
+    faitwindow.h \
+    armor.h \
+    agilitycharacters.h \
+    passivecharacters.h \
+    player_level.h \
+    strengthcharacters.h \
+    weapons.h \
+    equipment.h
 
 
 FORMS += \
     dialogwindow.ui \
     gamemap.ui \
     mainmenu.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    wingame.ui \
+    faitwindow.ui
 
 SUBDIRS += \
     game1.pro

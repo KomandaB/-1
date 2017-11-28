@@ -29,6 +29,7 @@ private slots:
     void btn_1_clicked();
     void btn_2_clicked();
     void btn_3_clicked(int id);
+    void winClicked();
     void goTuMenuClicked();
 
 signals:

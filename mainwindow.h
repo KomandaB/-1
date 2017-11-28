@@ -9,6 +9,8 @@
 #include "mainmenu.h"
 #include "gameentites.h"
 #include "gamehandler.h"
+#include "wingame.h"
+#include"faitwindow.h"
 
 
 namespace Ui {
@@ -31,6 +33,8 @@ private:
     DialogWindow *dialogWindow;
     StationWindow *stationWindow;
     MainMenu *mainMenu;
+    WinGame *winGame;
+    FaitWindow *faitWindow;
     QStackedWidget *windowHandler;
 public slots:
     void stateChangedSlot(GraphicStates newState,int ID);
