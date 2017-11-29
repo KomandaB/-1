@@ -4,11 +4,12 @@
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
+
 {
     ui->setupUi(this);
     gameHandler=new GameHandler;
     dialogWindow = new DialogWindow(this);
-    faitWindow=new FaitWindow(this);
+    faitWindow=new FaitWindow(this,gameHandler->getEntites());
     stationWindow = new StationWindow(this,gameHandler->getEntites());
     mainMenu = new MainMenu(this);
     winGame=new WinGame(this);
@@ -56,7 +57,10 @@ void MainWindow::stateChangedSlot(GraphicStates newState, int ID)
         break;
     }
     case GraphicStates::FAITWINDOW: {
-
+        for(int i=0;i<=(gameHandler->getEntites()->BadCharactersMap.size());i++){
+        gameHandler->getEntites()->getBadCharacterById(0)->set_ToStationId(ID);
+        }
+        //faitWindow->get_IdStation(ID);//его можно присваивать всем монстрам
         windowHandler->setCurrentWidget(faitWindow);
         break;
     }

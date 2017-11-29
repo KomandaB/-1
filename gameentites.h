@@ -1,5 +1,6 @@
 #ifndef GAMEENTITES_H
 #define GAMEENTITES_H
+#include <QDebug>
 #include "station.h"
 #include "goodcharacter.h"
 #include "badcharacter.h"
@@ -16,9 +17,10 @@ public:
     QHash<int, Station> StationsMap;
     QHash<int, Goodcharacter> GoodCharactersMap;
     QHash<int, BadCharacter> BadCharactersMap;
-private:
     void initBadCharacters();
     void initGoodCharacters();
+private:
+
 };
 
 #endif // GAMEENTITES_H

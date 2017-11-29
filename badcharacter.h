@@ -13,18 +13,20 @@ private:
         int m_attackPoints;
         int m_ammunition;
         int m_speedAttack;
+        int m_ToStationId;
 public:
         BadCharacter() {}
-    BadCharacter( int hp,int at, int ar, int sp,int spat, int ammo);
+    BadCharacter(int hp, int at, int ar, int sp, int spat, int ammo, int toStationId);
 
     void set_HP(int hp);
+    void set_ToStationId(int stationId);
 //    void set_AT(int at);
 //    void set_AR(int ar);
 //    void set_SP(int sp);
 //    void set_SPAT(int spat);
 
      void damage(int a, int ar);
-
+     int get_ToStationid();
     int get_HP();
     int get_AT();
     int get_AR();

@@ -33,17 +33,8 @@ void StationWindow::ChangeStation(int newId)
     ui->label->setText("Проговорить с человеком ");
     ui->textEdit->setText(entetis->getStationById(newId)->getStationInformation());
     ui->textEdit_2->setText("Ты находишься на станции "+ entetis->getStationById(newId)->getStationName());//готовая штука
-    if(entetis->getGoodCharacterById(0)==nullptr){
-        //QDebug() << "HERE";
-    }
-    else{
-    int hp=entetis->getGoodCharacterById(0)->get_HP();
-    }
+    ui->textEdit_2->setText( ui->textEdit_2->toPlainText()+ "\n"+" Здоровье персонажа: "  +QString::number(entetis->getGoodCharacterById(0)->get_HP()));
 
-   // QString str=QString::number(hp);
-    ui->textEdit_2->setText( ui->textEdit_2->toPlainText()+ "\n"+"\n Здоровье персонажа: "  +QString::number(entetis->getGoodCharacterById(0)->get_HP()));
- //   ui->textEdit_2->setCursorWidth ( ui->textEdit_2->textCursor().selectionStart());
-   // ui->textEdit_2->insertPlainText("Здоровье персонажа: "  +QString::number(entetis->getGoodCharacterById(0)->get_HP())+' ');
     if(newId==4){
         QPushButton* btn = new QPushButton();
         QLabel* lbl = new QLabel("Подняться наверх" );
@@ -61,7 +52,7 @@ void StationWindow::ChangeStation(int newId)
         QPushButton* btn = new QPushButton();
         QLabel* lbl = new QLabel("Пойти на станцию " +  entetis->getStationById(newId+1+i)->getStationName() );
         btn->setObjectName(QString::number(ToMoveStation[i]));
-        connect(btn, &QPushButton::clicked, this, [=] () { btn_3_clicked(ToMoveStation[i]); });//показать Антону
+        connect(btn, &QPushButton::clicked, this, [=] () { btn_3_clicked(ToMoveStation[i]); });//возможно сделать по другому
         ui->gridLayout_2->addWidget(btn, 0 + i, 0);
         ui->gridLayout_2->addWidget(lbl, 0 + i, 1);
 
@@ -72,14 +63,24 @@ void StationWindow::ChangeStation(int newId)
 
 
 }
-
+//присваивание хорошим людям станции будет происходить прям здесь(выше)
 void StationWindow::btn_1_clicked()
 {
+    QLayoutItem *child;
+    while ((child = ui->gridLayout_2->takeAt(0)) != 0) {
+        delete child->widget();
+        delete child;
+    }
     emit stateChanged(GraphicStates::DIALOG,0);
 }
 
-void StationWindow::btn_2_clicked()
+void StationWindow::btn_2_clicked()//не используется
 {
+    QLayoutItem *child;
+    while ((child = ui->gridLayout_2->takeAt(0)) != 0) {
+        delete child->widget();
+        delete child;
+    }
     emit stateChanged(GraphicStates::DIALOG,0);
 }
 
@@ -92,19 +93,30 @@ void StationWindow::btn_3_clicked(int id)
         delete child->widget();
         delete child;
     }
+    qDebug()<<id;
+    emit stateChanged(GraphicStates::FAITWINDOW,id);//довавить id
 
-    emit stateChanged(GraphicStates::GAME_MAP,id);//довавить id
 
 }
 
 void StationWindow::winClicked()
 {
    //QDebug()<<"HERE";
+    QLayoutItem *child;
+    while ((child = ui->gridLayout_2->takeAt(0)) != 0) {
+        delete child->widget();
+        delete child;
+    }
     emit stateChanged(GraphicStates::WINGAME,1);// 1 потому что выйграли
 }
 
 void StationWindow::goTuMenuClicked()
 {
+    QLayoutItem *child;
+    while ((child = ui->gridLayout_2->takeAt(0)) != 0) {
+        delete child->widget();
+        delete child;
+    }
     emit stateChanged(GraphicStates::MAIN_MENU,0);
 }
 

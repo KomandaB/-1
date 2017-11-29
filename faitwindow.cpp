@@ -31,14 +31,16 @@ FaitWindow::~FaitWindow()
 void FaitWindow::Ataka(int id)
 {
    battle(id);
-   emit stateChanged(GraphicStates::FAITWINDOW, 0);
+ //   qDebug()<<id;
+   emit stateChanged(GraphicStates::GAME_MAP, entites->getBadCharacterById(id)->get_ToStationid());
 }
 void FaitWindow:: action_1()
 {
 
     //cout << "Select an action" << endl;
-  //  cout << "1 - Attake" << endl;
+    //  cout << "1 - Attake" << endl;
 }
+
 
 
 void FaitWindow::battle(int monstr_id)
@@ -59,8 +61,8 @@ void FaitWindow::battle(int monstr_id)
         case (1):
         {
             Monster->damage(player->get_AT(), Monster->get_AR());
-          //ui->plainTextEdit->setTextCursor( "monster take " +  QString::number(1));
-          ui->textEdit->setText("erfer"+QString::number(player->get_AT()));
+
+          ui->textEdit->setText("monster take "+QString::number(player->get_AT()));
             if (Monster->get_HP() > 0)
             {
 //                cout << "Prepare he attacks" << endl << endl;
@@ -72,6 +74,7 @@ void FaitWindow::battle(int monstr_id)
 
                 if (player->get_HP() <= 0)
                 {
+                    emit stateChanged(GraphicStates::WINGAME,0);
                     player->game_over();
 //                    cout << "              GAME      OVER" << endl; //вызов wingame
                 }

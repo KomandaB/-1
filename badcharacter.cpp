@@ -1,20 +1,27 @@
 #include "badcharacter.h"
 
 
-  BadCharacter::BadCharacter( int hp,int at, int ar, int sp, int spat, int ammo) :
+  BadCharacter::BadCharacter(int hp, int at, int ar, int sp, int spat, int ammo, int toStationId) :
             m_attackPoints(at),
             m_heatPoints(hp),
             m_armorPoints(ar),
             m_speedPoints (sp),
           m_speedAttack (spat),
-          m_ammunition(ammo)
+          m_ammunition(ammo),
+        m_ToStationId(toStationId)
 {
 }
 
  void   BadCharacter::set_HP(int HP)
 {
-    m_heatPoints = HP;
-}
+     m_heatPoints = HP;
+ }
+
+ void BadCharacter::set_ToStationId(int stationId)
+ {
+     m_ToStationId=stationId;
+ }
+
 
 // void BadCharacter::set_AT(int AT)
 // {
@@ -66,4 +73,9 @@
          {
              m_heatPoints = m_heatPoints - a + ar;
          }
-     }
+ }
+
+ int BadCharacter::get_ToStationid()
+ {
+     return m_ToStationId;
+ }

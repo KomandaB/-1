@@ -10,6 +10,7 @@
 #include "gameentites.h"
 #include "station.h"
 #include"gamehandler.h"
+#include"badcharacter.h"
 
 namespace Ui {
 class FaitWindow;
