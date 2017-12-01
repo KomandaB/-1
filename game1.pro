@@ -24,7 +24,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += \
-    goodcharacter.cpp \
     badcharacter.cpp \
     station.cpp \
     gamehandler.cpp \
@@ -36,10 +35,10 @@ SOURCES += \
     dialogwindow.cpp \
     mainmenu.cpp \
     settings.cpp \
-    stationwindow.cpp
+    stationwindow.cpp \
+    nonplayercharacter.cpp
 
 HEADERS += \
-    goodcharacter.h \
     badcharacter.h \
     character.h \
     dialogwindow.h \
@@ -50,7 +49,8 @@ HEADERS += \
     player.h \
     settings.h \
     station.h \
-    stationwindow.h
+    stationwindow.h \
+    nonplayercharacter.h
 
 
 FORMS += \

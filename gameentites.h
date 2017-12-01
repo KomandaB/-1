@@ -1,7 +1,7 @@
 #ifndef GAMEENTITES_H
 #define GAMEENTITES_H
 #include "station.h"
-#include "goodcharacter.h"
+#include "nonplayercharacter.h"
 #include "badcharacter.h"
 
 class GameEntites

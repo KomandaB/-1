@@ -10,7 +10,7 @@ DialogWindow::DialogWindow(QWidget *parent) :
      ui->textEdit->setPlainText("rfr ndjb ltkf&");
      connect(ui->toMapBtn, &QPushButton::clicked, this, &DialogWindow::goToMapSlot);
     connect(ui->toMenuBtn, &QPushButton::clicked, this, &DialogWindow::goToMenuSlot);
-    connect(ui->var1, &QPushButton::clicked, this, &DialogWindow::on_var1_clicked);
+    connect(ui->var1, &QPushButton::clicked, this, &DialogWindow::nextPhrase);
 
 }
 
@@ -29,8 +29,11 @@ void DialogWindow::goToMapSlot()
     emit stateChanged(GraphicStates::GAME_MAP);
 }
 
-void DialogWindow::on_var1_clicked()
+void DialogWindow::nextPhrase()
 {
-    ui->textEdit->setPlainText("пися");
+    if(!isListOfPhrasesEmpty())
+    
+    
+    ui->textEdit->setPlainText("");
 }
 
