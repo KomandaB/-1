@@ -32,10 +32,10 @@ bool Station::getWasVisited() const
     return wasVisited;
 }
 
-void Station::setWasVisited(bool value)
-{
-    wasVisited = value;
-}
+//void Station::setWasVisited(bool value)
+//{
+//    wasVisited = value;
+//}
 
 QVector<int> Station::getStationsToMove() const
 {
@@ -50,8 +50,6 @@ QVector<int> Station::getCharactersId() const
 }
 QString Station::getStationInformation() const
 {
-
-    // сюда больше ничего не надо добавлять
     return stationInformation;
 }
 

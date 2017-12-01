@@ -24,7 +24,7 @@ private slots:
 
 
 signals:
-   void stateChanged(GraphicStates newState);
+   void stateChanged(GraphicStates newState,int id);
 };
 
 #endif // DIALOGWINDOW_H
