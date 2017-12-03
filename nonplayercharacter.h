@@ -1,21 +1,24 @@
 #ifndef NONPLAYERCHARACTER_H
 #define NONPLAYERCHARACTER_H
 #include "character.h"
+#include "QStringList"
+#include "QVector"
 
 
-class NonPlayerCharacter : public Character
+class NonPlayerCharacter
 {
-public://Надо ли нам хранить станцию на котоой находимся?
-
+public:
     CharacterResponse makeDecision(int answerId);
     NonPlayerCharacter();
-    NonPlayerCharacter(int _NonPlayerCharacterId, QString _NonPlayerCharacterName,  QStringList _NonPlayerCharacterPhrases);
-    int getNonPlayerCharacterId() const;
-    QString getNonPlayerCharacterName() const;//возвращает строку, имя текущего человека
+    NonPlayerCharacter(int _NonPlayerCharacterId, QString _NonPlayerCharacterName);
+    int getNonPlayerCharacterId();
+    QString getNonPlayerCharacterName();
 private:
-    int NonPlayerCharacterId;//
+    int NonPlayerCharacterId;
     QString NonPlayerCharacterName;
-
+    int lastPhraseIndex;
+    QStringList NonPlayerCharacterPhrases;
+    QVector<int> merchantsInventory;
 };
 
 #endif // NONPLAYERCHARACTER_H

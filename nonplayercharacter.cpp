@@ -1,15 +1,14 @@
 #include "nonplayercharacter.h"
+#include "QTime"
 NonPlayerCharacter::NonPlayerCharacter()
 {
 }
 // класс будет дополняться при необходимости
-NonPlayerCharacter::NonPlayerCharacter(int _NonPlayerCharacterId, QString _NonPlayerCharacterName, QStringList _NonPlayerCharacterPhrases, int _lastPhraseIndex) :
+NonPlayerCharacter::NonPlayerCharacter(int _NonPlayerCharacterId, QString _NonPlayerCharacterName) :
     NonPlayerCharacterId(_NonPlayerCharacterId),
-    NonPlayerCharacterName(_NonPlayerCharacterName),
-    NonPlayerCharacterPhrases(_NonPlayerCharacterPhrases),
-    lastPhraseIndex(_lastPhraseIndex)
+    NonPlayerCharacterName(_NonPlayerCharacterName)
 {
-
+     QVector<int> merchantsInventory(10);
 }
 
 int NonPlayerCharacter::getNonPlayerCharacterId() const
@@ -43,21 +42,30 @@ void NonPlayerCharacter::setNonPlayerCharacterPhrases(QString text)
 
 }
 
-//void NonPlayerCharacter::talkToCharacter(QString name){
-//    name.NonPlayerCharacterPhrases[];
-//    int i = 0;
-//    while(i < name.NonPlayerCharacterPhrases.length()){
-//        //Передаем одну фразу в диалоговое окно, ждем рекции игрока
-
-//        i++;
-//    }
-
-//}
 
 QString NonPlayerCharacter::getNonPlayerCharacterPhrase(){
 
     return NonPlayerCharacterPhrases.takeFirst();
 
 }
+
+
+int getRandomGoods(int numberOfGoods){
+    int number;
+    QTime midnight(0,0,0);
+    qsrand(midnight.secsTo(QTime::currentTime()));
+    number = qrand() % numberOfGoods + 1; //генерирование случайного id от 0 до количества предметов
+    return number;
+}
+
+void setMerchantsGoods(NonPlayerCharacter name){
+
+    for(int i=0, i<10,i++){
+        name.merchantsInventory[i]=getRandomGoods(10);
+    }
+
+
+}
+
 
 
