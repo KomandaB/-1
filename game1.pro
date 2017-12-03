@@ -45,7 +45,9 @@ SOURCES += \
     player_level.cpp \
     strengthcharacters.cpp \
     weapons.cpp \
-    equipment.cpp
+    equipment.cpp\
+    nonplayercharacter.cpp \
+    goods.cpp
 
 HEADERS += \
     goodcharacter.h \
@@ -69,7 +71,9 @@ HEADERS += \
     player_level.h \
     strengthcharacters.h \
     weapons.h \
-    equipment.h
+    equipment.h\
+    nonplayercharacter.h \
+    goods.h
 
 
 FORMS += \

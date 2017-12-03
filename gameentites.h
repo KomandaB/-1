@@ -2,7 +2,7 @@
 #define GAMEENTITES_H
 #include <QDebug>
 #include "station.h"
-#include "goodcharacter.h"
+#include "nonplayercharacter.h"
 #include "badcharacter.h"
 
 class GameEntites
