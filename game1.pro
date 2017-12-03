@@ -24,6 +24,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += \
+    goodcharacter.cpp \
     badcharacter.cpp \
     station.cpp \
     gamehandler.cpp \
@@ -36,9 +37,6 @@ SOURCES += \
     mainmenu.cpp \
     settings.cpp \
     stationwindow.cpp \
-<<<<<<< HEAD
-    nonplayercharacter.cpp
-=======
     wingame.cpp \
     faitwindow.cpp \
     armor.cpp \
@@ -47,10 +45,12 @@ SOURCES += \
     player_level.cpp \
     strengthcharacters.cpp \
     weapons.cpp \
-    equipment.cpp
->>>>>>> refs/remotes/origin/master
+    equipment.cpp\
+    nonplayercharacter.cpp \
+    goods.cpp
 
 HEADERS += \
+    goodcharacter.h \
     badcharacter.h \
     character.h \
     dialogwindow.h \
@@ -62,9 +62,6 @@ HEADERS += \
     settings.h \
     station.h \
     stationwindow.h \
-<<<<<<< HEAD
-    nonplayercharacter.h
-=======
     wingame.h \
     wingame.h \
     faitwindow.h \
@@ -74,8 +71,9 @@ HEADERS += \
     player_level.h \
     strengthcharacters.h \
     weapons.h \
-    equipment.h
->>>>>>> refs/remotes/origin/master
+    equipment.h\
+    nonplayercharacter.h \
+    goods.h
 
 
 FORMS += \
