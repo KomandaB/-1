@@ -11,7 +11,7 @@ NonPlayerCharacter::NonPlayerCharacter(int _NonPlayerCharacterId, QString _NonPl
      QVector<int> merchantsInventory(10);
 }
 
-int NonPlayerCharacter::getNonPlayerCharacterId() const
+int NonPlayerCharacter::getNonPlayerCharacterId()
 {
     return NonPlayerCharacterId;
     // 1 - Сюжетный персонаж
@@ -19,7 +19,7 @@ int NonPlayerCharacter::getNonPlayerCharacterId() const
     // 3 - Торговец
 }
 
-QString NonPlayerCharacter::getNonPlayerCharacterName() const
+QString NonPlayerCharacter::getNonPlayerCharacterName()
 {
     return NonPlayerCharacterName;
 }
@@ -60,7 +60,7 @@ int getRandomGoods(int numberOfGoods){
 
 void setMerchantsGoods(NonPlayerCharacter name){
 
-    for(int i=0, i<10,i++){
+    for(int i=0; i<10;i++){
         name.merchantsInventory[i]=getRandomGoods(10);
     }
 

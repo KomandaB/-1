@@ -6,11 +6,11 @@ class goods
 {
 private:
     int goodsId;
-    int goodsName;
+    QString goodsName;
     int goodsCost;
     //свойства предметов?
 public:
-    goods();
+    goods(int id, QString name, int cost);
 
 
 };

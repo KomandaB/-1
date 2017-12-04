@@ -4,6 +4,7 @@
 #include "station.h"
 #include "nonplayercharacter.h"
 #include "badcharacter.h"
+#include "goodcharacter.h"
 
 class GameEntites
 {

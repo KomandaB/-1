@@ -1,5 +1,7 @@
 #include "dialogwindow.h"
 #include "ui_dialogwindow.h"
+#include "nonplayercharacter.h"
+#include "QStringList"
 
 DialogWindow::DialogWindow(QWidget *parent) :
     QWidget(parent),
@@ -29,11 +31,11 @@ void DialogWindow::goToMapSlot()
     emit stateChanged(GraphicStates::GAME_MAP,0);
 }
 
-void DialogWindow::nextPhrase()
+void DialogWindow::nextPhrase(NonPlayerCharacter name)
 {
-    if(!isListOfPhrasesEmpty())
-    
-    
-    ui->textEdit->setPlainText("");
+    if(!name.isListOfPhrasesEmpty()){
+        ui->textEdit->setPlainText(name.getNonPlayerCharacterPhrase());
+    }else{
+    ui->textEdit->setPlainText("");}
 }
 

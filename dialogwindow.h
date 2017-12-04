@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QTextBrowser>
 #include "settings.h"
+#include "nonplayercharacter.h"
 
 namespace Ui {
 class DialogWindow;
@@ -20,8 +21,7 @@ private:
 private slots:
    void goToMenuSlot();
    void goToMapSlot();
-   void on_var1_clicked();
-
+   void nextPhrase(NonPlayerCharacter name);
 
 signals:
    void stateChanged(GraphicStates newState,int id);
