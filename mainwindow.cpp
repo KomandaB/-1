@@ -60,6 +60,7 @@ void MainWindow::stateChangedSlot(GraphicStates newState, int ID)
         for(int i=0;i<=(gameHandler->getEntites()->BadCharactersMap.size());i++){
         gameHandler->getEntites()->getBadCharacterById(0)->set_ToStationId(ID);
         }
+        faitWindow->changeAtatk(ID);
         //faitWindow->get_IdStation(ID);//его можно присваивать всем монстрам
         windowHandler->setCurrentWidget(faitWindow);
         break;
