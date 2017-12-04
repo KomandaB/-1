@@ -44,8 +44,14 @@ void NonPlayerCharacter::setNonPlayerCharacterPhrases(QString text)
 
 
 QString NonPlayerCharacter::getNonPlayerCharacterPhrase(){
+    if(lastPhraseIndex < NonPlayerCharacterPhrases.length()-1){
+        lastPhraseIndex++;
+        return NonPlayerCharacterPhrases[lastPhraseIndex-1];
+    }
+    else{
+        return "Пока!";
+    }
 
-    return NonPlayerCharacterPhrases.takeFirst();
 
 }
 

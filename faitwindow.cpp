@@ -75,8 +75,10 @@ void FaitWindow::battle(int monstr_id)
                 if (player->get_HP() <= 0)
                 {
                     emit stateChanged(GraphicStates::WINGAME,0);
+
                     player->game_over();
-//                    cout << "              GAME      OVER" << endl; //вызов wingame
+//                 return;
+                    //cout << "              GAME      OVER" << endl; //вызов wingame
                 }
             }
             else

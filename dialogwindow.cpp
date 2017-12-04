@@ -3,7 +3,7 @@
 #include "nonplayercharacter.h"
 #include "QStringList"
 
-DialogWindow::DialogWindow(QWidget *parent) :
+DialogWindow::DialogWindow(QWidget *parent, GameEntites *entites, int ID) :
     QWidget(parent),
     ui(new Ui::DialogWindow)
 {
@@ -12,7 +12,10 @@ DialogWindow::DialogWindow(QWidget *parent) :
      ui->textEdit->setPlainText("rfr ndjb ltkf&");
      connect(ui->toMapBtn, &QPushButton::clicked, this, &DialogWindow::goToMapSlot);
     connect(ui->toMenuBtn, &QPushButton::clicked, this, &DialogWindow::goToMenuSlot);
-    connect(ui->var1, &QPushButton::clicked, this, &DialogWindow::nextPhrase);
+   // connect(ui->var1, &QPushButton::clicked, this, &DialogWindow::nextPhrase);
+    connect(ui->var1, &QPushButton::clicked, this, [=] () {
+        nextPhrase(entites->getNonPlayerCharacterById(ID)->getNonPlayerCharacterPhrase());
+    });
 
 }
 
@@ -31,11 +34,8 @@ void DialogWindow::goToMapSlot()
     emit stateChanged(GraphicStates::GAME_MAP,0);
 }
 
-void DialogWindow::nextPhrase(NonPlayerCharacter name)
+void DialogWindow::nextPhrase(QString phrase)
 {
-    if(!name.isListOfPhrasesEmpty()){
-        ui->textEdit->setPlainText(name.getNonPlayerCharacterPhrase());
-    }else{
-    ui->textEdit->setPlainText("");}
+    ui->textEdit->setPlainText(phrase);
 }
 
