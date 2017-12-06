@@ -45,7 +45,7 @@ SOURCES += \
     player_level.cpp \
     strengthcharacters.cpp \
     weapons.cpp \
-    equipment.cpp\
+    equipment.cpp \
     nonplayercharacter.cpp \
     goods.cpp
 
@@ -71,7 +71,7 @@ HEADERS += \
     player_level.h \
     strengthcharacters.h \
     weapons.h \
-    equipment.h\
+    equipment.h \
     nonplayercharacter.h \
     goods.h
 
@@ -87,4 +87,8 @@ FORMS += \
 SUBDIRS += \
     game1.pro
 
-DISTFILES +=
+DISTFILES += \
+    metro.jpg
+
+RESOURCES += \
+    images.qrc

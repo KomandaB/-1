@@ -74,4 +74,3 @@ void setMerchantsGoods(NonPlayerCharacter name){
 }
 
 
-

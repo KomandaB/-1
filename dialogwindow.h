@@ -25,7 +25,7 @@ private:
 private slots:
    void goToMenuSlot();
    void goToMapSlot();
-   void nextPhrase(NonPlayerCharacter name);
+   void nextPhrase(QString phrase);
 
 signals:
    void stateChanged(GraphicStates newState,int id);

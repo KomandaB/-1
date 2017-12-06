@@ -18,6 +18,7 @@ public:
 
 private:
     Ui::MainMenu *ui;
+
 private slots:
     void startNewGameSlot();
 signals:

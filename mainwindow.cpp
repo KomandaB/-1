@@ -7,6 +7,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 {
     ui->setupUi(this);
+    setFixedSize(1280,720);
     gameHandler=new GameHandler;
     dialogWindow = new DialogWindow(this);
     faitWindow=new FaitWindow(this,gameHandler->getEntites());
