@@ -23,6 +23,15 @@ BadCharacter *GameEntites::getBadCharacterById(int BadCharId)
     }
 }
 
+NonPlayerCharacter *GameEntites::getNonPlayerCharacterById(int NpcId){
+    if (NonPlayerCharactersMap.contains(NpcId)){
+        return &NonPlayerCharactersMap[NpcId];
+    } else {
+        return nullptr;
+    }
+
+}
+
 Station *GameEntites::getStationById(int stationId)
 {
     if (StationsMap.contains(stationId)){
@@ -92,4 +101,11 @@ void GameEntites::initGoodCharacters()
 {
     GoodCharactersMap[0]=Goodcharacter(100,10,0,0,0,0);
     GoodCharactersMap[1]=Goodcharacter(100,1,1,1,1,1);
+}
+
+
+void GameEntites::initNonPlayerCharacters(){
+
+    NonPlayerCharactersMap[0] = NonPlayerCharacter(0, "Steven");
+    NonPlayerCharactersMap[0].setNonPlayerCharacterPhrases("Привет next Как дела?");
 }

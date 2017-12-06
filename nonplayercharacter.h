@@ -23,7 +23,7 @@ public:
 private:
     int NonPlayerCharacterId;
     QString NonPlayerCharacterName;
-    int lastPhraseIndex;
+    int lastPhraseIndex = 0;
     QStringList NonPlayerCharacterPhrases;
 
 };
