@@ -7,17 +7,7 @@ FaitWindow::FaitWindow(QWidget *parent, GameEntites *entites, int ID) :
     entites(entites)
 {
     ui->setupUi(this);
-    BadCharacter* Monster=entites->getBadCharacterById(ID);
-    Goodcharacter* player=entites->getGoodCharacterById(0);
-ui->PlayertextEdit->setText(ui->PlayertextEdit->toPlainText()+ "\n"+"HP : " + QString::number( player->get_HP()));
-ui->PlayertextEdit->setText(ui->PlayertextEdit->toPlainText()+ "\n"+"AT : " +QString::number( player->get_AT()));
-ui->PlayertextEdit->setText(ui->PlayertextEdit->toPlainText()+ "\n"+"DEF: " +QString::number( player->get_AR()));
-ui->PlayertextEdit->setText(ui->PlayertextEdit->toPlainText()+ "\n"+"player have  " + QString::number( player->get_ammunition()) + " coins");
 
-ui->MonstertextEdit->setText(ui->MonstertextEdit->toPlainText()+ "\n"+"HP : " + QString::number( Monster->get_HP()));
-ui->MonstertextEdit->setText(ui->MonstertextEdit->toPlainText()+ "\n"+"AT : " +QString::number(  Monster->get_AT()));
-ui->MonstertextEdit->setText(ui->MonstertextEdit->toPlainText()+ "\n"+"DEF: " +QString::number(  Monster->get_AR()));
-ui->MonstertextEdit->setText(ui->MonstertextEdit->toPlainText()+"\n"+"player have  " +QString::number(  Monster->get_ammunition()) + " coins");
    connect(ui->btn_ataka,&QPushButton::clicked,this, [=] () { Ataka(ID); });  //изменить на батл, т к кнопки менятся не будут, будет только переписыватьс text
 }
 //сюда передавать Ид монстра
@@ -106,6 +96,7 @@ void FaitWindow::battle(int monstr_id)
                 {
                     emit stateChanged(GraphicStates::WINGAME,0);
                     player->game_over();
+                    return;
 //                    cout << "              GAME      OVER" << endl; //вызов wingame
                 }
             }

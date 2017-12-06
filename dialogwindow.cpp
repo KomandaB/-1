@@ -12,7 +12,7 @@ DialogWindow::DialogWindow(QWidget *parent) :
      ui->textEdit->setPlainText("rfr ndjb ltkf&");
      connect(ui->toMapBtn, &QPushButton::clicked, this, &DialogWindow::goToMapSlot);
     connect(ui->toMenuBtn, &QPushButton::clicked, this, &DialogWindow::goToMenuSlot);
-    connect(ui->var1, &QPushButton::clicked, this, &DialogWindow::nextPhrase);
+ //   connect(ui->var1, &QPushButton::clicked, this, &DialogWindow::nextPhrase);
 
 }
 
