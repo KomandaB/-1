@@ -3,7 +3,7 @@
 #include "nonplayercharacter.h"
 #include "QStringList"
 
-DialogWindow::DialogWindow(QWidget *parent) :
+DialogWindow::DialogWindow(QWidget *parent,GameEntites *entites, int ID) :
     QWidget(parent),
     ui(new Ui::DialogWindow)
 {

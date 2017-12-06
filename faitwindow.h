@@ -23,7 +23,6 @@ class FaitWindow : public QMainWindow
 public:
     explicit FaitWindow(QWidget *parent = 0, GameEntites *entites=0, int ID=0);
     ~FaitWindow();
-    void changeAtatk(int ID);
 
 private:
     Ui::FaitWindow *ui;
