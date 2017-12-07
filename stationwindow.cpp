@@ -33,6 +33,20 @@ void StationWindow::ChangeStation(int newId)
     ui->label->setText("Проговорить с человеком ");
     ui->textEdit->setText(entetis->getStationById(newId)->getStationInformation());
     ui->textEdit_2->setText("Ты находишься на станции "+ entetis->getStationById(newId)->getStationName());//готовая штука
+    for (auto it : entetis->getGoodCharacterById(0)->getInventory()){
+        Item* tempItem = entetis->getItemById(it);
+        switch(tempItem->getType()){
+        case ItemType::ARMOR:{
+            qDebug() << "armor points:" << dynamic_cast<Armor*>(tempItem)->get_ArmorPoints();
+            break;
+        }
+        case ItemType::WEAPONS:{
+            qDebug() << "Attack points:" << dynamic_cast<Weapons*>(tempItem)->get_WeaponsAttack();
+            break;
+        }
+        }
+
+    }
     ui->textEdit_2->setText( ui->textEdit_2->toPlainText()+ "\n"+" Здоровье персонажа: "  +QString::number(entetis->getGoodCharacterById(0)->get_HP()));
 
     if(newId==4){

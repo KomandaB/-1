@@ -14,6 +14,14 @@ Goodcharacter *GameEntites::getGoodCharacterById(int GoodCharId)
     }
 }
 
+Item *GameEntites::getItemById(int ItemId)
+{
+    if (ItemMap.contains(ItemId)){
+        return ItemMap[ItemId];
+    } else {
+        return nullptr;
+    }
+}
 BadCharacter *GameEntites::getBadCharacterById(int BadCharId)
 {
     if (BadCharactersMap.contains(BadCharId)){
@@ -43,6 +51,7 @@ Station *GameEntites::getStationById(int stationId)
 
 void GameEntites::initGame()
 {
+    initItem();
     initBadCharacters();
     initGoodCharacters();
     QVector<int> stationIds;
@@ -100,6 +109,8 @@ void GameEntites::initBadCharacters()
 void GameEntites::initGoodCharacters()
 {
     GoodCharactersMap[0]=Goodcharacter(100,10,10,10,10,100);
+    GoodCharactersMap[0].addItem(0);
+    GoodCharactersMap[0].addItem(1);
     GoodCharactersMap[1]=Goodcharacter(100,1,1,1,1,1);
 }
 
@@ -108,4 +119,8 @@ void GameEntites::initNonPlayerCharacters(){
 
     NonPlayerCharactersMap[0] = NonPlayerCharacter(0, "Steven");
     NonPlayerCharactersMap[0].setNonPlayerCharacterPhrases("Привет next Как дела?");
+}
+void GameEntites::initItem(){
+    ItemMap[0]= new Armor(0,"Assault",3, ItemType::ARMOR, 5);
+    ItemMap[1] = new Weapons(1,"Melee Knife",3, ItemType::WEAPONS, 10);
 }

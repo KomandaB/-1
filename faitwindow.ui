@@ -24,25 +24,28 @@
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="1" column="1">
+     <item row="2" column="1">
       <widget class="QLabel" name="label">
        <property name="text">
         <string>Атака</string>
        </property>
       </widget>
      </item>
-     <item row="1" column="0">
+     <item row="2" column="0">
       <widget class="QPushButton" name="btn_ataka">
        <property name="text">
         <string/>
        </property>
       </widget>
      </item>
-     <item row="0" column="0" colspan="2">
-      <widget class="QPlainTextEdit" name="plainTextEdit"/>
+     <item row="1" column="2">
+      <widget class="QTextEdit" name="MonstertextEdit"/>
      </item>
      <item row="0" column="2">
-      <widget class="QTextEdit" name="textEdit"/>
+      <widget class="QTextEdit" name="PlayertextEdit"/>
+     </item>
+     <item row="0" column="0" rowspan="2" colspan="2">
+      <widget class="QPlainTextEdit" name="plainTextEdit"/>
      </item>
     </layout>
    </widget>

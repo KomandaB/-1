@@ -47,7 +47,8 @@ SOURCES += \
     weapons.cpp \
     equipment.cpp \
     nonplayercharacter.cpp \
-    goods.cpp
+    goods.cpp \
+    item.cpp
 
 HEADERS += \
     goodcharacter.h \
@@ -63,7 +64,6 @@ HEADERS += \
     station.h \
     stationwindow.h \
     wingame.h \
-    wingame.h \
     faitwindow.h \
     armor.h \
     agilitycharacters.h \
@@ -73,7 +73,8 @@ HEADERS += \
     weapons.h \
     equipment.h \
     nonplayercharacter.h \
-    goods.h
+    goods.h \
+    item.h
 
 
 FORMS += \

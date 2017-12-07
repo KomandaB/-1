@@ -4,17 +4,16 @@
 #include <QObject>
 #include <QString>
 #include <QVector>
+#include "item.h"
 
-class Armor
+class Armor: public Item
 {
 private:
     int ArmorPoints;
-    QString NameArmor;
+    
 public:
     Armor(){}
-    Armor(int Armor, QString name);
-
-    QString get_NameArmor();
+    Armor(int id,QString name,int price,ItemType type, int Armor);
 
     int get_ArmorPoints();
 

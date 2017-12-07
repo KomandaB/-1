@@ -4,18 +4,17 @@
 #include <QObject>
 #include <QString>
 #include <QVector>
-class Weapons
+#include"item.h"
+class Weapons: public Item
 {
 private:
     int WeaponsAttack;
-    QString NameWeapons;
 public:
     Weapons(){}
-    Weapons(int AT, QString name);
+    Weapons(int id, QString name, int price, ItemType type, int AT);
 
     int get_WeaponsAttack();
 
-    QString get_NameWeapons();
 };
 
 #endif // WEAPONS_H

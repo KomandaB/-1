@@ -1,8 +1,8 @@
 #include "armor.h"
 
-Armor::Armor(int Armor, QString name ):
-   ArmorPoints(Armor),
-   NameArmor(name)
+Armor::Armor(int id, QString name, int price, ItemType type, int Armor):
+   Item(id, name, price, type),
+   ArmorPoints(Armor)
 {
 
 }
@@ -10,9 +10,4 @@ Armor::Armor(int Armor, QString name ):
 int Armor::get_ArmorPoints()
 {
     return ArmorPoints;
-}
-
-QString Armor::get_NameArmor()
-{
-    return NameArmor;
 }

@@ -20,7 +20,7 @@ private:
     bool game = true;
     QString name;
     int ammunition;
-
+    QVector<int>Inventory;
     StrengthCharacters Strength;
     AgilityCharacters Agility;
     PassiveCharacters PassiveTalents;
@@ -37,6 +37,7 @@ private:
 public:
     Goodcharacter();
     Goodcharacter(int hp,int At,int ar, int Sp, int spat, int coins);
+    void addItem(int itemId);
         void set_Strength(int Hp, int At);
 
         void set_Agility(int Speed, int AtSpeed);
@@ -124,7 +125,8 @@ public:
             void damage(int AT_Monster);
 
 
-    };
+            QVector<int> getInventory() const;
+};
 
 #endif // GOODCHARACTER_H
 

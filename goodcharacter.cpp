@@ -18,6 +18,16 @@ Goodcharacter::Goodcharacter(int hp,int At,int ar, int Sp, int spat, int coins) 
 
 
 }
+
+void Goodcharacter::addItem(int itemId)
+{
+    Inventory.push_back(itemId);
+}
+QVector<int> Goodcharacter::getInventory() const
+{
+    return Inventory;
+}
+
 Goodcharacter::Goodcharacter()
 {
 
