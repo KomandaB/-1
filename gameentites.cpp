@@ -119,9 +119,10 @@ void GameEntites::initGoodCharacters()
 
 void GameEntites::initNonPlayerCharacters(){
 
-    NonPlayerCharactersMap[0] = NonPlayerCharacter(0, "Steven");
+    NonPlayerCharactersMap[0] = NonPlayerCharacter(0, "Стив");
    // NonPlayerCharactersMap[0].setNonPlayerCharacterPhrases("Hello");
     NonPlayerCharactersMap[0].setNonPlayerCharacterPhrases("Привет next Как дела?");
+    NonPlayerCharactersMap[0].setPlayerAnswers("И тебе привет next Отлично");
 
     NonPlayerCharactersMap[1] = NonPlayerCharacter(1, "Mike");
     NonPlayerCharactersMap[1].setNonPlayerCharacterPhrases("Hi next My name is mike");

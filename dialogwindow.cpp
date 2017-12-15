@@ -44,9 +44,17 @@ void DialogWindow::goToMapSlot()
 
 void DialogWindow::nextPhrase(int ID)
 {
-    if(!entites->getNonPlayerCharacterById(ID)->isEndOfPhrases()){
+
+
+
      ui->textEdit->append(entites->getNonPlayerCharacterById(ID)->getNonPlayerCharacterName()+": "+entites->getNonPlayerCharacterById(ID)->getNonPlayerCharacterPhrase());
-    }else{
-        ui->responseButton->setDisabled(true);
-    }
+     if(entites->getNonPlayerCharacterById(ID)->isEndOfPhrases()){
+         ui->responseButton->setDisabled(true);
+     }else{
+//         ui->responseButton->setText(entites->getNonPlayerCharacterById(ID)->getLastPlayerAnswer());
+//          ui->textEdit->append("Вы: "+entites->getNonPlayerCharacterById(ID)->getPlayerAnswer());
+
+     }
+
+
 }

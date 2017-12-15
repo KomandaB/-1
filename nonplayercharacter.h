@@ -15,18 +15,25 @@ public:
     QString getNonPlayerCharacterName();
     int getLastPhraseIndex();
     bool isEndOfPhrases();
+      bool isEndOfAnswers();
     void setNonPlayerCharacterPhrases(QString text);
     QString getNonPlayerCharacterPhrase();
+    QString getPlayerAnswer();
+    QString getLastPlayerAnswer();
     int getRandomGoods();
     void setMerchantsGoods();
+    void  setPlayerAnswers(QString text);
   QVector<int> merchantsInventory;
 
 private:
-  bool endOfPhrases;
+  bool endOfPhrases = false;
+    bool endOfAnswers = false;
+    QStringList PlayerAnswers;
     QStringList NonPlayerCharacterPhrases;
     int NonPlayerCharacterId;
     QString NonPlayerCharacterName;
     int lastPhraseIndex = 0;
+    int lastAnswerIndex = 0;
 
 
 };

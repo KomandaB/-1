@@ -30,9 +30,21 @@ int NonPlayerCharacter::getLastPhraseIndex(){
     return lastPhraseIndex;
 }
 
+QString NonPlayerCharacter::getLastPlayerAnswer(){
+
+return PlayerAnswers[lastAnswerIndex];
+
+
+}
+
 bool NonPlayerCharacter::isEndOfPhrases(){
 
    return endOfPhrases;
+}
+
+bool NonPlayerCharacter::isEndOfAnswers(){
+
+   return endOfAnswers;
 }
 
 void NonPlayerCharacter::setNonPlayerCharacterPhrases(QString text)
@@ -43,6 +55,25 @@ void NonPlayerCharacter::setNonPlayerCharacterPhrases(QString text)
 
 }
 
+void NonPlayerCharacter::setPlayerAnswers(QString text)
+{
+    PlayerAnswers = text.split("next");
+
+}
+
+
+QString NonPlayerCharacter::getPlayerAnswer(){
+    if(!endOfAnswers){
+        if(lastAnswerIndex<PlayerAnswers.length()){
+            lastAnswerIndex++;
+            return PlayerAnswers[lastAnswerIndex-1];
+        }else if(lastAnswerIndex+1>=PlayerAnswers.length()){
+            endOfAnswers=true;
+            return "Пока!";
+        }
+    }
+    return 0;
+}
 
 QString NonPlayerCharacter::getNonPlayerCharacterPhrase(){
     if(!endOfPhrases){
@@ -56,6 +87,7 @@ QString NonPlayerCharacter::getNonPlayerCharacterPhrase(){
     }
     return 0;
 }
+
 
 
 int getRandomGoods(int numberOfGoods){
