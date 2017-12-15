@@ -52,3 +52,8 @@ object_script.game1.Release
 *.autosave
 stationwindow.cpp.autosave
 stationwindow.cpp.autosave
+ui_wingame.h
+ui_mainwindow.h
+ui_mainmenu.h
+ui_gamemap.h
+ui_faitwindow.h

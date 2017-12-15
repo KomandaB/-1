@@ -14,7 +14,7 @@ public:
     int getNonPlayerCharacterId();
     QString getNonPlayerCharacterName();
     int getLastPhraseIndex();
-    bool isListOfPhrasesEmpty();
+    bool isEndOfPhrases();
     void setNonPlayerCharacterPhrases(QString text);
     QString getNonPlayerCharacterPhrase();
     int getRandomGoods();
@@ -22,6 +22,7 @@ public:
   QVector<int> merchantsInventory;
 
 private:
+  bool endOfPhrases;
     QStringList NonPlayerCharacterPhrases;
     int NonPlayerCharacterId;
     QString NonPlayerCharacterName;

@@ -30,9 +30,9 @@ int NonPlayerCharacter::getLastPhraseIndex(){
     return lastPhraseIndex;
 }
 
-bool NonPlayerCharacter::isListOfPhrasesEmpty(){
+bool NonPlayerCharacter::isEndOfPhrases(){
 
-   return NonPlayerCharacterPhrases.isEmpty();
+   return endOfPhrases;
 }
 
 void NonPlayerCharacter::setNonPlayerCharacterPhrases(QString text)
@@ -45,18 +45,16 @@ void NonPlayerCharacter::setNonPlayerCharacterPhrases(QString text)
 
 
 QString NonPlayerCharacter::getNonPlayerCharacterPhrase(){
-    if(lastPhraseIndex<NonPlayerCharacterPhrases.length()){
-        lastPhraseIndex++;
-        return NonPlayerCharacterPhrases[lastPhraseIndex-1];
-    }else if(lastPhraseIndex+1>=NonPlayerCharacterPhrases.length()){
-        return "Пока!";
+    if(!endOfPhrases){
+        if(lastPhraseIndex<NonPlayerCharacterPhrases.length()){
+            lastPhraseIndex++;
+            return NonPlayerCharacterPhrases[lastPhraseIndex-1];
+        }else if(lastPhraseIndex+1>=NonPlayerCharacterPhrases.length()){
+            endOfPhrases=true;
+            return "Пока!";
+        }
     }
-
-
-
-
-
-
+    return 0;
 }
 
 

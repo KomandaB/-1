@@ -44,5 +44,9 @@ void DialogWindow::goToMapSlot()
 
 void DialogWindow::nextPhrase(int ID)
 {
-     ui->textEdit->setPlainText(entites->getNonPlayerCharacterById(ID)->getNonPlayerCharacterName()+": "+entites->getNonPlayerCharacterById(ID)->getNonPlayerCharacterPhrase());
+    if(!entites->getNonPlayerCharacterById(ID)->isEndOfPhrases()){
+     ui->textEdit->append(entites->getNonPlayerCharacterById(ID)->getNonPlayerCharacterName()+": "+entites->getNonPlayerCharacterById(ID)->getNonPlayerCharacterPhrase());
+    }else{
+        ui->responseButton->setDisabled(true);
+    }
 }
