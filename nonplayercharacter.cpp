@@ -1,5 +1,6 @@
 #include "nonplayercharacter.h"
 #include "QTime"
+#include "QDebug"
 NonPlayerCharacter::NonPlayerCharacter()
 {
 }
@@ -44,13 +45,16 @@ void NonPlayerCharacter::setNonPlayerCharacterPhrases(QString text)
 
 
 QString NonPlayerCharacter::getNonPlayerCharacterPhrase(){
-    if(lastPhraseIndex < NonPlayerCharacterPhrases.length()-1){
+    if(lastPhraseIndex<NonPlayerCharacterPhrases.length()){
         lastPhraseIndex++;
         return NonPlayerCharacterPhrases[lastPhraseIndex-1];
-    }
-    else{
+    }else if(lastPhraseIndex+1>=NonPlayerCharacterPhrases.length()){
         return "Пока!";
     }
+
+
+
+
 
 
 }

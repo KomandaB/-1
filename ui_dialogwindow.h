@@ -35,7 +35,7 @@ public:
     QPushButton *toMapBtn;
     QPushButton *var4;
     QPushButton *var5;
-    QPushButton *var1;
+    QPushButton *responseButton;
 
     void setupUi(QWidget *DialogWindow)
     {
@@ -57,6 +57,7 @@ public:
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         textEdit = new QTextEdit(gridLayoutWidget);
         textEdit->setObjectName(QStringLiteral("textEdit"));
+        textEdit->setReadOnly(true);
 
         horizontalLayout->addWidget(textEdit);
 
@@ -88,10 +89,10 @@ public:
 
         gridLayout->addWidget(var5, 5, 1, 1, 1);
 
-        var1 = new QPushButton(gridLayoutWidget);
-        var1->setObjectName(QStringLiteral("var1"));
+        responseButton = new QPushButton(gridLayoutWidget);
+        responseButton->setObjectName(QStringLiteral("responseButton"));
 
-        gridLayout->addWidget(var1, 1, 1, 1, 1);
+        gridLayout->addWidget(responseButton, 1, 1, 1, 1);
 
 
         retranslateUi(DialogWindow);
@@ -113,7 +114,7 @@ public:
         toMapBtn->setText(QApplication::translate("DialogWindow", "\320\262\320\265\321\200\320\275\321\203\321\214\321\202\321\201\321\217 \320\275\320\260 \321\201\321\202\320\260\320\275\320\260\320\275\321\206\320\270\321\216 ", Q_NULLPTR));
         var4->setText(QApplication::translate("DialogWindow", "var4", Q_NULLPTR));
         var5->setText(QApplication::translate("DialogWindow", "var5", Q_NULLPTR));
-        var1->setText(QApplication::translate("DialogWindow", "var1", Q_NULLPTR));
+        responseButton->setText(QApplication::translate("DialogWindow", "var1", Q_NULLPTR));
     } // retranslateUi
 
 };

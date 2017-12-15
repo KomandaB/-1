@@ -22,11 +22,12 @@ public:
     ~DialogWindow();
 private:
     Ui::DialogWindow *ui;
+    GameEntites *entites;
 private slots:
    void goToMenuSlot();
    void goToMapSlot();
-   void nextPhrase(QString phrase);
-
+  // void nextPhrase(QString phrase, QString name);
+   void nextPhrase(int ID);
 signals:
    void stateChanged(GraphicStates newState,int id);
 };

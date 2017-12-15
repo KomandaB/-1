@@ -9,7 +9,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     setFixedSize(1280,720);
     gameHandler=new GameHandler;
-    dialogWindow = new DialogWindow(this);
+
+    dialogWindow = new DialogWindow(this,gameHandler->getEntites());
     faitWindow=new FaitWindow(this,gameHandler->getEntites());
     stationWindow = new StationWindow(this,gameHandler->getEntites());
     mainMenu = new MainMenu(this);

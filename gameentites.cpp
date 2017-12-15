@@ -1,5 +1,5 @@
 #include "gameentites.h"
-
+#include "QDebug"
 GameEntites::GameEntites()
 {
 
@@ -32,6 +32,7 @@ BadCharacter *GameEntites::getBadCharacterById(int BadCharId)
 }
 
 NonPlayerCharacter *GameEntites::getNonPlayerCharacterById(int NpcId){
+    qDebug()<<NpcId;
     if (NonPlayerCharactersMap.contains(NpcId)){
         return &NonPlayerCharactersMap[NpcId];
     } else {
@@ -54,6 +55,7 @@ void GameEntites::initGame()
     initItem();
     initBadCharacters();
     initGoodCharacters();
+    initNonPlayerCharacters();
     QVector<int> stationIds;
     stationIds.push_back(1);
     QVector<int> charIds;
@@ -118,7 +120,11 @@ void GameEntites::initGoodCharacters()
 void GameEntites::initNonPlayerCharacters(){
 
     NonPlayerCharactersMap[0] = NonPlayerCharacter(0, "Steven");
+   // NonPlayerCharactersMap[0].setNonPlayerCharacterPhrases("Hello");
     NonPlayerCharactersMap[0].setNonPlayerCharacterPhrases("Привет next Как дела?");
+
+    NonPlayerCharactersMap[1] = NonPlayerCharacter(1, "Mike");
+    NonPlayerCharactersMap[1].setNonPlayerCharacterPhrases("Hi next My name is mike");
 }
 void GameEntites::initItem(){
     ItemMap[0]= new Armor(0,"Assault",3, ItemType::ARMOR, 5);

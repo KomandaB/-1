@@ -5,16 +5,18 @@
 
 DialogWindow::DialogWindow(QWidget *parent, GameEntites *entites, int ID) :
     QWidget(parent),
-    ui(new Ui::DialogWindow)
+    ui(new Ui::DialogWindow),
+    entites(entites)
 {
     ui->setupUi(this);
 
-     ui->textEdit->setPlainText("rfr ndjb ltkf&");
+     ui->textEdit->setPlainText("...");
      connect(ui->toMapBtn, &QPushButton::clicked, this, &DialogWindow::goToMapSlot);
     connect(ui->toMenuBtn, &QPushButton::clicked, this, &DialogWindow::goToMenuSlot);
    // connect(ui->var1, &QPushButton::clicked, this, &DialogWindow::nextPhrase);
-    connect(ui->var1, &QPushButton::clicked, this, [=] () {
-        nextPhrase(entites->getNonPlayerCharacterById(ID)->getNonPlayerCharacterPhrase());
+    connect(ui->responseButton, &QPushButton::clicked, this, [=] () {
+     // nextPhrase(entites->getNonPlayerCharacterById(ID)->getNonPlayerCharacterPhrase(), entites->getNonPlayerCharacterById(ID)->getNonPlayerCharacterName());
+        nextPhrase(ID);
     });
 
 }
@@ -34,8 +36,13 @@ void DialogWindow::goToMapSlot()
     emit stateChanged(GraphicStates::GAME_MAP,0);
 }
 
-void DialogWindow::nextPhrase(QString phrase)
-{
-    ui->textEdit->setPlainText(phrase);
-}
+//void DialogWindow::nextPhrase(QString phrase, QString name)
+//{
+//    ui->textEdit->setPlainText(name+": "+phrase);
+//    ui->responseButton->setText("Привет");
+//}
 
+void DialogWindow::nextPhrase(int ID)
+{
+     ui->textEdit->setPlainText(entites->getNonPlayerCharacterById(ID)->getNonPlayerCharacterName()+": "+entites->getNonPlayerCharacterById(ID)->getNonPlayerCharacterPhrase());
+}

@@ -5,7 +5,6 @@ GameHandler::GameHandler()
      entites= new GameEntites;
      entites->initGame();//происходит создание всех станций и людей
    //  entites->initGoodCharacters();
-
 }
 
 void GameHandler::startNewGame()

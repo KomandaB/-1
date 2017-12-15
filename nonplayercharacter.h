@@ -19,12 +19,14 @@ public:
     QString getNonPlayerCharacterPhrase();
     int getRandomGoods();
     void setMerchantsGoods();
-    QVector<int> merchantsInventory;
+  QVector<int> merchantsInventory;
+
 private:
+    QStringList NonPlayerCharacterPhrases;
     int NonPlayerCharacterId;
     QString NonPlayerCharacterName;
     int lastPhraseIndex = 0;
-    QStringList NonPlayerCharacterPhrases;
+
 
 };
 
