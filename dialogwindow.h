@@ -20,9 +20,12 @@ class DialogWindow : public QWidget
 public:
     explicit DialogWindow(QWidget *parent = 0, GameEntites *entites=0, int ID=0);
     ~DialogWindow();
+    void ChangeCharacterId(int ID);
 private:
     Ui::DialogWindow *ui;
     GameEntites *entites;
+    int currentChacterID;
+
 private slots:
    void goToMenuSlot();
    void goToMapSlot();

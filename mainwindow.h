@@ -10,7 +10,8 @@
 #include "gameentites.h"
 #include "gamehandler.h"
 #include "wingame.h"
-#include"faitwindow.h"
+#include "faitwindow.h"
+#include "dialogwindow.h"
 
 
 namespace Ui {

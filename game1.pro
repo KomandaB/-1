@@ -89,7 +89,9 @@ SUBDIRS += \
     game1.pro
 
 DISTFILES += \
-    metro.jpg
+    metro.jpg\
+    start_background.png
+
 
 RESOURCES += \
     images.qrc

@@ -11,8 +11,7 @@ StationWindow::StationWindow(QWidget *parent, GameEntites *entites, int ID) :
 //    ui->point_1_btn->setMask(*region);
 //    ui->point_2_btn->setMask(*region);
 //    ui->point_3_btn->setMask(*region);
-    connect(ui->point_1_btn, &QPushButton::clicked, this, &StationWindow::btn_1_clicked);
-    //connect(ui->point_2_btn, &QPushButton::clicked, this, &StationWindow::btn_2_clicked);
+   //connect(ui->point_2_btn, &QPushButton::clicked, this, &StationWindow::btn_2_clicked);
   //  connect(ui->point_3_btn, &QPushButton::clicked, this, &StationWindow::btn_3_clicked);
     connect(ui->toMenuBtn, &QPushButton::clicked, this, &StationWindow::goTuMenuClicked);
 
@@ -28,6 +27,8 @@ StationWindow::~StationWindow()
 void StationWindow::ChangeStation(int newId)
 {
     //удаление и добавление
+    connect(ui->point_1_btn, &QPushButton::clicked, this, [=](){btn_1_clicked(newId);});
+
     QVector <int> ToMoveStation;//временный вектор станций на которые мы можем пойти
     ToMoveStation=entetis->getStationById(newId)->getStationsToMove();//.at(0);
     ui->label->setText("Проговорить с человеком ");
@@ -78,14 +79,16 @@ void StationWindow::ChangeStation(int newId)
 
 }
 //присваивание хорошим людям станции будет происходить прям здесь(выше)
-void StationWindow::btn_1_clicked()
+void StationWindow::btn_1_clicked(int ID)
 {
     QLayoutItem *child;
     while ((child = ui->gridLayout_2->takeAt(0)) != 0) {
         delete child->widget();
         delete child;
     }
-    emit stateChanged(GraphicStates::DIALOG,0);
+
+    qDebug()<<ID<<"IID";
+    emit stateChanged(GraphicStates::DIALOG,ID);
 }
 
 void StationWindow::btn_2_clicked()//не используется
@@ -107,7 +110,6 @@ void StationWindow::btn_3_clicked(int id)
         delete child->widget();
         delete child;
     }
-    qDebug()<<id;
     emit stateChanged(GraphicStates::FAITWINDOW,id);//довавить id
 
 

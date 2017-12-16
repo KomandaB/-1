@@ -5,8 +5,9 @@ MainMenu::MainMenu(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MainMenu)
 {ui->setupUi(this);
-    QPixmap pixmap(":/metro.jpg");
-    ui->label_2->setPixmap(pixmap);
+
+//    QPixmap pixmap(":/metro.jpg");
+//    ui->label_2->setPixmap(pixmap);
  //  setFixedSize(1280,820);
 //    ui->label_2->
  //   connect(ui->)

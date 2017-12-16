@@ -50,6 +50,7 @@ void MainWindow::stateChangedSlot(GraphicStates newState, int ID)
         break;
     }
     case GraphicStates::DIALOG: {
+        dialogWindow->ChangeCharacterId(ID);
         windowHandler->setCurrentWidget(dialogWindow);
         break;
     }
