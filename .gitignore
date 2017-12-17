@@ -57,3 +57,4 @@ ui_mainwindow.h
 ui_mainmenu.h
 ui_gamemap.h
 ui_faitwindow.h
+debug/moc_backpack.cpp
