@@ -409,7 +409,7 @@ void FaitWindow::defense()
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-         if ( (player_SPAT_dominate == Monster_SPAT_dominate) &&(bit == 0)&&(number_of_AT  == 5))
+         if ( ((player_SPAT_dominate == Monster_SPAT_dominate)) &&(bit == 0)&&(number_of_AT  == 5))
        //if (((number_of_AT == 1) || (player_SPAT_dominate == Monster_SPAT_dominate) ) &&(bit == 0))
        // if (number_of_AT == 2)
          {
@@ -432,6 +432,31 @@ void FaitWindow::defense()
 
               }
          }
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+         if ( ((player_SPAT_dominate == 2)) &&(bit == 0)&&(number_of_AT  == 0))
+
+         {
+
+
+              //BadCharacter* Monster=entites->getBadCharacterById(currentMonsterId);
+              Goodcharacter* player=entites->getGoodCharacterById(0);
+             player->set_AR(player->get_AR() + 5);
+              damage();
+              player->set_AR(player->get_AR() - 5);
+
+              bit = 1;
+              unblock_AT();
+
+              if (player->get_HP() == 0 || player->get_HP() < 0)
+              {
+                   ui->Textbatlle->setText(ui->Textbatlle->toPlainText()+ "\n"+"       GAME       OVER     ");
+                   pause();
+                  emit stateChanged(GraphicStates::MAIN_MENU,0);
+
+              }
+         }
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 }
 
@@ -506,12 +531,11 @@ void FaitWindow::evasion()
     }
          }
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
         if  ( (player_SPAT_dominate == Monster_SPAT_dominate) &&(bit == 0))
-       // if (((number_of_AT == 1) || (player_SPAT_dominate == Monster_SPAT_dominate) ) &&(bit == 0))
-         //if (number_of_AT == 2)
+
          {
 
 
@@ -541,7 +565,39 @@ void FaitWindow::evasion()
         emit stateChanged(GraphicStates::MAIN_MENU,0);
     }
          }
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 
+        if ( ((player_SPAT_dominate == 2)) &&(bit == 0)&&(number_of_AT  == 0))
+        {
+
+            int lucky;
+            lucky = qrand() % 9;
+            if (lucky < player->get_MISS() )
+            {
+                  ui->Textbatlle->setText(ui->Textbatlle->toPlainText()+ "\n"+" Player take 0 damage");
+                  unblock_AT();
+                  bit = 1;
+
+            }
+            else
+            {
+              FaitWindow::damage();
+               unblock_AT();
+              bit = 1;
+            }
+            if (player->get_HP() <= 0)
+            {
+                ui->btn_ataka->setEnabled(0);
+                ui->bag->setEnabled(0);
+                ui->def->setEnabled(0);
+                ui->miss->setEnabled(0);
+                 ui->Textbatlle->setText(ui->Textbatlle->toPlainText()+ "\n"+"       GAME       OVER     ");
+                 pause();
+                emit stateChanged(GraphicStates::MAIN_MENU,0);
+        }
+
+        }
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 }
 
 bool FaitWindow::getIsRound() const
