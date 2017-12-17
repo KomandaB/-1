@@ -48,7 +48,8 @@ SOURCES += \
     equipment.cpp \
     nonplayercharacter.cpp \
     goods.cpp \
-    item.cpp
+    item.cpp \
+    backpack.cpp
 
 HEADERS += \
     goodcharacter.h \
@@ -74,7 +75,8 @@ HEADERS += \
     equipment.h \
     nonplayercharacter.h \
     goods.h \
-    item.h
+    item.h \
+    backpack.h
 
 
 FORMS += \
@@ -83,7 +85,8 @@ FORMS += \
     mainmenu.ui \
     mainwindow.ui \
     wingame.ui \
-    faitwindow.ui
+    faitwindow.ui \
+    backpack.ui
 
 SUBDIRS += \
     game1.pro
@@ -91,7 +94,8 @@ SUBDIRS += \
 DISTFILES += \
     metro.jpg\
     start_background.png \
-    start.png
+    Невский проспект.png \
+    Невский проспект.png
 
 
 RESOURCES += \
