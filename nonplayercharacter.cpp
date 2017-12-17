@@ -9,7 +9,7 @@ NonPlayerCharacter::NonPlayerCharacter(int _NonPlayerCharacterId, QString _NonPl
     NonPlayerCharacterId(_NonPlayerCharacterId),
     NonPlayerCharacterName(_NonPlayerCharacterName)
 {
-     QVector<int> merchantsInventory(10);
+    QVector<int> merchantsInventory(10);
 }
 
 int NonPlayerCharacter::getNonPlayerCharacterId()
@@ -31,20 +31,31 @@ int NonPlayerCharacter::getLastPhraseIndex(){
 }
 
 QString NonPlayerCharacter::getLastPlayerAnswer(){
-
-return PlayerAnswers[lastAnswerIndex];
-
+    //    if(!isEndOfAnswers()){
+    //return PlayerAnswers[lastAnswerIndex];}
+    //    else{
+    //        return "Нам больше не о чем говорить";
+    //    }
+    if(!endOfAnswers){
+        if(lastAnswerIndex<PlayerAnswers.length()){
+            return PlayerAnswers[lastAnswerIndex];
+        }else if(lastAnswerIndex+1>=PlayerAnswers.length()){
+            endOfAnswers=true;
+            return "Нам больше не о чем говорить";
+        }
+    }
+    return 0;
 
 }
 
 bool NonPlayerCharacter::isEndOfPhrases(){
 
-   return endOfPhrases;
+    return endOfPhrases;
 }
 
 bool NonPlayerCharacter::isEndOfAnswers(){
 
-   return endOfAnswers;
+    return endOfAnswers;
 }
 
 void NonPlayerCharacter::setNonPlayerCharacterPhrases(QString text)

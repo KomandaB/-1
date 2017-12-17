@@ -8,17 +8,6 @@ FaitWindow::FaitWindow(QWidget *parent, GameEntites *entites, int ID) :
     currentMonsterId(ID)
 {
     ui->setupUi(this);
-//    BadCharacter* Monster=entites->getBadCharacterById(ID);
-//    Goodcharacter* player=entites->getGoodCharacterById(0);
-//ui->PlayertextEdit->setText(ui->PlayertextEdit->toPlainText()+ "\n"+"HP : " + QString::number( player->get_HP()));
-//ui->PlayertextEdit->setText(ui->PlayertextEdit->toPlainText()+ "\n"+"AT : " +QString::number( player->get_AT()));
-//ui->PlayertextEdit->setText(ui->PlayertextEdit->toPlainText()+ "\n"+"DEF: " +QString::number( player->get_AR()));
-//ui->PlayertextEdit->setText(ui->PlayertextEdit->toPlainText()+ "\n"+"player have  " + QString::number( player->get_ammunition()) + " coins");
-
-//ui->MonstertextEdit->setText(ui->MonstertextEdit->toPlainText()+ "\n"+"HP : " + QString::number( Monster->get_HP()));
-//ui->MonstertextEdit->setText(ui->MonstertextEdit->toPlainText()+ "\n"+"AT : " +QString::number(  Monster->get_AT()));
-//ui->MonstertextEdit->setText(ui->MonstertextEdit->toPlainText()+ "\n"+"DEF: " +QString::number(  Monster->get_AR()));
-//ui->MonstertextEdit->setText(ui->MonstertextEdit->toPlainText()+"\n"+"player have  " +QString::number(  Monster->get_ammunition()) + " coins");
     connect(ui->btn_ataka,&QPushButton::clicked,this, &FaitWindow::attack);
 
 }
@@ -51,6 +40,7 @@ void FaitWindow::unblock_AT()
     ui->def->setEnabled(0);
     ui->miss->setEnabled(0);
 }
+
 void FaitWindow::changeAtatk(int ID)
 {
 BadCharacter* Monster=entites->getBadCharacterById(currentMonsterId);
@@ -60,9 +50,11 @@ Goodcharacter* player=entites->getGoodCharacterById(0);
 currentMonsterId = ID;
 update();
 
- player_SPAT_dominate = 1;
- Monster_SPAT_dominate = 1;
+number_of_AT = 5;
+player_SPAT_dominate = 1;
+Monster_SPAT_dominate = 1;
 
+<<<<<<< HEAD
 //if (( player->get_SPAT() / Monster->get_SPAT() == 2) || (player->get_SPAT() / Monster->get_SPAT() > 2))
 //        {
 //    player_SPAT_dominate = 2;
@@ -76,6 +68,21 @@ update();
 //        number_of_AT = 1;
 // }
 //}
+=======
+if (( player->get_SPAT()  == Monster->get_SPAT()*2) || ((player->get_SPAT() - 2*Monster->get_SPAT()) > 0))
+        {
+    player_SPAT_dominate = 2;
+    //переменная, которая запоминает, кто бьёт 2 раза ( игрок 0, монстр 1)
+    number_of_AT = 0;
+}
+
+ if (( Monster->get_SPAT() == player->get_SPAT()*2)  || ( (Monster->get_SPAT() - 2*player->get_SPAT()) > 0  ))
+ {
+      Monster_SPAT_dominate = 2;
+        number_of_AT = 1;
+ }
+
+>>>>>>> f09956f46a0b1d74c929fea4e4bfa0e36c665272
 
 
  if ((player->get_SP()) > (Monster->get_SP()))
@@ -88,7 +95,7 @@ unblock_AT();
  }
 
 }
-
+// функция обнавления характеристик персонажа
 void FaitWindow::update()
 {
     BadCharacter* Monster=entites->getBadCharacterById(currentMonsterId);
@@ -132,7 +139,9 @@ void FaitWindow::damage( )
     Goodcharacter* player=entites->getGoodCharacterById(0);
 
 
- block_AT();
+ //block_AT();
+
+
 
 
     if (player->get_AR() < Monster->get_AT())
@@ -144,11 +153,9 @@ void FaitWindow::damage( )
 
     else {
          ui->Textbatlle->setText(ui->Textbatlle->toPlainText()+ "\n"+" Player take 0 damage");
-
-
     }
 
-      unblock_AT();
+      //unblock_AT();
 }
 // функция нанесения урона игроком для кнопки
 void FaitWindow::attack()
@@ -156,7 +163,9 @@ void FaitWindow::attack()
     Goodcharacter* player=entites->getGoodCharacterById(0);
     bit = 0;
 
-    if ((player_SPAT_dominate == 2) & (number_of_AT == 0))
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    if ((player_SPAT_dominate == 2) && (number_of_AT == 0))
     {
     unblock_AT();
     int crit;
@@ -215,8 +224,9 @@ void FaitWindow::attack()
     }
    }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    if (( number_of_AT == 0)  && ( player_SPAT_dominate == 1) &(bit == 0))
+    if (( number_of_AT == 0)  && ( player_SPAT_dominate == 1) &&(bit == 0))
     {
         unblock_AT();
         int crit;
@@ -254,6 +264,7 @@ void FaitWindow::attack()
             }
 
         }
+
 
 
         if ( (Monster->get_HP() == 0) ||  (Monster->get_HP() < 0))
@@ -271,7 +282,11 @@ void FaitWindow::attack()
         }
 
     }
-    if ((number_of_AT == 1) || (player_SPAT_dominate == Monster_SPAT_dominate))
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    if (((number_of_AT == 1) || (player_SPAT_dominate == Monster_SPAT_dominate) ) &&(bit == 0))
+   // if (number_of_AT == 2)
     {
 
         unblock_AT();
@@ -322,10 +337,13 @@ void FaitWindow::attack()
 
         }
         else{
+               bit = 1;
         update();
         }
     }
   }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void FaitWindow::go_to_station(int ID)
 {
@@ -334,27 +352,114 @@ void FaitWindow::go_to_station(int ID)
 
 // короче, пока что сделаю прибавку к ХП, потом нужно переделать под защиту
 
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
+/// //////////////////////////////////////////////////////////////////////////////////////////
+/// //////////////////////////////////////////////////////////////////////////////////////////
+/// //////////////////////////////////////////////////////////////////////////////////////////
+
+/// //////////////////////////////////////////////////////////////////////////////////////////
+/// //////////////////////////////////////////////////////////////////////////////////////////
+/// //////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 void FaitWindow::defense()
 {
+    bit = 0;
 
-    unblock_AT();
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+       if ((Monster_SPAT_dominate == 2) && (number_of_AT == 1)  && (bit == 0))
+       {
+
+    //unblock_AT();
 
     //BadCharacter* Monster=entites->getBadCharacterById(currentMonsterId);
     Goodcharacter* player=entites->getGoodCharacterById(0);
+
    player->set_AR(player->get_AR() + 5);
-    FaitWindow::damage();
+    damage();
     player->set_AR(player->get_AR() - 5);
+
+    bit = 1;
+    Monster_SPAT_dominate = 1;
+
+
     if (player->get_HP() == 0 || player->get_HP() < 0)
     {
          ui->Textbatlle->setText(ui->Textbatlle->toPlainText()+ "\n"+"       GAME       OVER     ");
+
          pause();
         emit stateChanged(GraphicStates::MAIN_MENU,0);
 
     }
+       }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        if ((Monster_SPAT_dominate == 1) && (number_of_AT == 1)  && (bit == 0))
+        {
+
+
+            //BadCharacter* Monster=entites->getBadCharacterById(currentMonsterId);
+            Goodcharacter* player=entites->getGoodCharacterById(0);
+           player->set_AR(player->get_AR() + 5);
+            damage();
+            unblock_AT();
+            player->set_AR(player->get_AR() - 5);
+             Monster_SPAT_dominate = 2;
+            bit = 1;
+
+            if (player->get_HP() == 0 || player->get_HP() < 0)
+            {
+                 ui->Textbatlle->setText(ui->Textbatlle->toPlainText()+ "\n"+"       GAME       OVER     ");
+                 pause();
+                emit stateChanged(GraphicStates::MAIN_MENU,0);
+
+            }
+        }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+         if ( (player_SPAT_dominate == Monster_SPAT_dominate) &&(bit == 0)&&(number_of_AT  == 5))
+       //if (((number_of_AT == 1) || (player_SPAT_dominate == Monster_SPAT_dominate) ) &&(bit == 0))
+       // if (number_of_AT == 2)
+         {
+
+
+              //BadCharacter* Monster=entites->getBadCharacterById(currentMonsterId);
+              Goodcharacter* player=entites->getGoodCharacterById(0);
+             player->set_AR(player->get_AR() + 5);
+              damage();
+              player->set_AR(player->get_AR() - 5);
+
+              bit = 1;
+              unblock_AT();
+
+              if (player->get_HP() == 0 || player->get_HP() < 0)
+              {
+                   ui->Textbatlle->setText(ui->Textbatlle->toPlainText()+ "\n"+"       GAME       OVER     ");
+                   pause();
+                  emit stateChanged(GraphicStates::MAIN_MENU,0);
+
+              }
+         }
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 }
 
 void FaitWindow::evasion()
 {  Goodcharacter* player=entites->getGoodCharacterById(0);
+
+    bit = 0;
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+         if ((Monster_SPAT_dominate == 2) && (number_of_AT == 1)  && (bit == 0))
+         {
 
 
     int lucky;
@@ -362,11 +467,15 @@ void FaitWindow::evasion()
     if (lucky < player->get_MISS() )
     {
           ui->Textbatlle->setText(ui->Textbatlle->toPlainText()+ "\n"+" Player take 0 damage");
-          unblock_AT();
+          //unblock_AT();
+          bit = 1;
+          Monster_SPAT_dominate = 1;
     }
     else
     {
-      FaitWindow::damage();
+     damage();
+      bit = 1;
+      Monster_SPAT_dominate = 1;
     }
     if (player->get_HP() <= 0)
     {
@@ -377,9 +486,78 @@ void FaitWindow::evasion()
          ui->Textbatlle->setText(ui->Textbatlle->toPlainText()+ "\n"+"       GAME       OVER     ");
          pause();
         emit stateChanged(GraphicStates::MAIN_MENU,0);
+    }
+         }
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+         if ((Monster_SPAT_dominate == 1) && (number_of_AT == 1)  && (bit == 0))
+         {
+
+    int lucky;
+    lucky = qrand() % 9;
+    if (lucky < player->get_MISS() )
+    {
+          ui->Textbatlle->setText(ui->Textbatlle->toPlainText()+ "\n"+" Player take 0 damage");
+          unblock_AT();
+          bit = 1;
+          Monster_SPAT_dominate = 2;
+    }
+    else
+    {
+      FaitWindow::damage();
+       unblock_AT();
+      bit = 1;
+      Monster_SPAT_dominate = 2;
+    }
+    if (player->get_HP() <= 0)
+    {
+        ui->btn_ataka->setEnabled(0);
+        ui->bag->setEnabled(0);
+        ui->def->setEnabled(0);
+        ui->miss->setEnabled(0);
+         ui->Textbatlle->setText(ui->Textbatlle->toPlainText()+ "\n"+"       GAME       OVER     ");
+         pause();
+        emit stateChanged(GraphicStates::MAIN_MENU,0);
+    }
+         }
+
+
+
+
+        if  ( (player_SPAT_dominate == Monster_SPAT_dominate) &&(bit == 0))
+       // if (((number_of_AT == 1) || (player_SPAT_dominate == Monster_SPAT_dominate) ) &&(bit == 0))
+         //if (number_of_AT == 2)
+         {
+
+
+    int lucky;
+    lucky = qrand() % 9;
+    if (lucky < player->get_MISS() )
+    {
+          ui->Textbatlle->setText(ui->Textbatlle->toPlainText()+ "\n"+" Player take 0 damage");
+          unblock_AT();
+          bit = 1;
 
     }
+    else
+    {
+      FaitWindow::damage();
+       unblock_AT();
+      bit = 1;
+    }
+    if (player->get_HP() <= 0)
+    {
+        ui->btn_ataka->setEnabled(0);
+        ui->bag->setEnabled(0);
+        ui->def->setEnabled(0);
+        ui->miss->setEnabled(0);
+         ui->Textbatlle->setText(ui->Textbatlle->toPlainText()+ "\n"+"       GAME       OVER     ");
+         pause();
+        emit stateChanged(GraphicStates::MAIN_MENU,0);
+    }
+         }
+
 }
 
 bool FaitWindow::getIsRound() const

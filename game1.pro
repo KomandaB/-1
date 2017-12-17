@@ -93,7 +93,8 @@ SUBDIRS += \
 
 DISTFILES += \
     metro.jpg\
-    start_background.png
+    start_background.png \
+    start.png
 
 
 RESOURCES += \

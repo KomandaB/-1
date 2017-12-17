@@ -25,7 +25,7 @@ private:
     Ui::DialogWindow *ui;
     GameEntites *entites;
     int currentChacterID;
-
+    bool isJustStarted = true;
 private slots:
    void goToMenuSlot();
    void goToMapSlot(int ID);
@@ -33,6 +33,9 @@ private slots:
    void nextPhrase(int ID);
 signals:
    void stateChanged(GraphicStates newState,int id);
+protected:
+   void showEvent(QShowEvent *event);
+
 };
 
 #endif // DIALOGWINDOW_H

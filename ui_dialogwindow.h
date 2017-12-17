@@ -98,7 +98,7 @@ public:
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\320\237\321\200\320\270\320\262\320\265\321\202, \320\277\321\203\321\202\320\275\320\270\320\272!</p></body></html>", Q_NULLPTR));
-        responseButton->setText(QApplication::translate("DialogWindow", "var1", Q_NULLPTR));
+        responseButton->setText(QApplication::translate("DialogWindow", "\320\237\320\276\320\263\320\276\320\262\320\276\321\200\320\270\321\202\321\214", Q_NULLPTR));
     } // retranslateUi
 
 };

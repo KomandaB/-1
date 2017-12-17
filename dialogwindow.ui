@@ -82,7 +82,7 @@ p, li { white-space: pre-wrap; }
        </sizepolicy>
       </property>
       <property name="text">
-       <string>var1</string>
+       <string>Поговорить</string>
       </property>
      </widget>
     </item>
