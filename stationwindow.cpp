@@ -31,7 +31,7 @@ void StationWindow::ChangeStation(int newId)
 
     QVector <int> ToMoveStation;//временный вектор станций на которые мы можем пойти
     ToMoveStation=entetis->getStationById(newId)->getStationsToMove();//.at(0);
-    ui->label->setText("Проговорить с человеком ");
+    ui->label->setText("Поговорить с человеком");
     ui->textEdit->setText(entetis->getStationById(newId)->getStationInformation());
     ui->textEdit_2->setText("Ты находишься на станции "+ entetis->getStationById(newId)->getStationName());//готовая штука
     for (auto it : entetis->getGoodCharacterById(0)->getInventory()){

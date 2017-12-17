@@ -2,5 +2,7 @@
     <qresource prefix="/">
         <file>metro.jpg</file>
         <file>start_background.png</file>
+        <file>station_1.png</file>
+        <file>stationWindowBackground.png</file>
     </qresource>
 </RCC>

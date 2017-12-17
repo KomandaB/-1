@@ -293,7 +293,6 @@ color:rgb(208, 0, 177);
    </property>
   </widget>
   <zorder>graphicsView</zorder>
-  <zorder></zorder>
   <zorder>newGameBtn</zorder>
   <zorder>exitBtn</zorder>
  </widget>
