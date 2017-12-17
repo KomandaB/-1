@@ -91,7 +91,8 @@ SUBDIRS += \
 DISTFILES += \
     metro.jpg\
     start_background.png \
-    start.png
+    Невский проспект.png \
+    Невский проспект.png
 
 
 RESOURCES += \

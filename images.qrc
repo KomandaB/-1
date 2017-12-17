@@ -2,7 +2,11 @@
     <qresource prefix="/">
         <file>metro.jpg</file>
         <file>start_background.png</file>
-        <file>start.png</file>
         <file>stationWindowBackground.png</file>
+        <file>Невский проспект.png</file>
+        <file>Маяковская.png</file>
+        <file>Достаевская.png</file>
+        <file>Пушкинская.png</file>
+        <file>Обводный канал.png</file>
     </qresource>
 </RCC>
