@@ -36,7 +36,7 @@ private:
 
 public:
     Goodcharacter();
-    Goodcharacter(int hp,int At,int ar, int Sp, int spat, int coins);
+    Goodcharacter(int hp,int At,int ar, int Sp, int spat,int miss,int crit, int coins);
     void addItem(int itemId);
         void set_Strength(int Hp, int At);
 
@@ -61,6 +61,8 @@ public:
         QString get_name();
 
         int get_ammunition();
+
+
 
         // set and get commands for  StrengthCharacters
 
@@ -119,6 +121,7 @@ public:
         int get_EqAT();
 
 
+        void set_AR(int Ar);
 
         // battel damege for player
 
@@ -129,4 +132,3 @@ public:
 };
 
 #endif // GOODCHARACTER_H
-

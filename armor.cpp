@@ -11,3 +11,6 @@ int Armor::get_ArmorPoints()
 {
     return ArmorPoints;
 }
+void Armor::set_ArmorPoints(int Ar){
+    ArmorPoints = Ar;
+}

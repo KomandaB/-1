@@ -16,7 +16,7 @@ public:
     Armor(int id,QString name,int price,ItemType type, int Armor);
 
     int get_ArmorPoints();
-
+    void set_ArmorPoints(int Ar);
 };
 
 #endif // ARMOR_H

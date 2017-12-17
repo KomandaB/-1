@@ -22,6 +22,8 @@ public:
 
     int get_EqWeaponsAT();
 
+    void set_EqArmor(int Ar);
+
 };
 
 #endif // EQUIPMENT_H

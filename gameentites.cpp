@@ -110,10 +110,10 @@ void GameEntites::initBadCharacters()
 
 void GameEntites::initGoodCharacters()
 {
-    GoodCharactersMap[0]=Goodcharacter(100,10,10,10,10,100);
+    GoodCharactersMap[0]=Goodcharacter(100      ,9      ,10     ,20        ,10           , 5        ,5       ,100);
     GoodCharactersMap[0].addItem(0);
     GoodCharactersMap[0].addItem(1);
-    GoodCharactersMap[1]=Goodcharacter(100,1,1,1,1,1);
+
 }
 
 

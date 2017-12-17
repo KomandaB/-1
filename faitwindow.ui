@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>798</width>
+    <height>728</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,21 +20,17 @@
       <x>36</x>
       <y>11</y>
       <width>541</width>
-      <height>301</height>
+      <height>321</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="2" column="1">
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string>Атака</string>
-       </property>
-      </widget>
+     <item row="0" column="0" rowspan="2" colspan="2">
+      <widget class="QTextEdit" name="Textbatlle"/>
      </item>
-     <item row="2" column="0">
+     <item row="2" column="0" colspan="2">
       <widget class="QPushButton" name="btn_ataka">
        <property name="text">
-        <string/>
+        <string>Атака</string>
        </property>
       </widget>
      </item>
@@ -44,8 +40,26 @@
      <item row="0" column="2">
       <widget class="QTextEdit" name="PlayertextEdit"/>
      </item>
-     <item row="0" column="0" rowspan="2" colspan="2">
-      <widget class="QPlainTextEdit" name="plainTextEdit"/>
+     <item row="2" column="2">
+      <widget class="QPushButton" name="def">
+       <property name="text">
+        <string>Защита</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0" colspan="2">
+      <widget class="QPushButton" name="bag">
+       <property name="text">
+        <string>тут нужно поместить рюкзак</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QPushButton" name="miss">
+       <property name="text">
+        <string>Уклонение</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
@@ -55,8 +69,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
-     <height>21</height>
+     <width>798</width>
+     <height>20</height>
     </rect>
    </property>
   </widget>

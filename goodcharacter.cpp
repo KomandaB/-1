@@ -1,18 +1,16 @@
 #include "goodcharacter.h"
 
 
-Goodcharacter::Goodcharacter(int hp,int At,int ar, int Sp, int spat, int coins) :
-   attackPoints(At),
-   heatPoints (hp),
+Goodcharacter::Goodcharacter(int hp,int At,int ar, int Sp, int spat,int miss,int crit, int coins) :
+
+
    armorPoints (ar),
-   speedPoints (Sp),
-    Ammunition (coins),
-   speedAttack (spat)
+   Ammunition (coins)
 
 {
-   set_Strength(hp, 5);
-   set_Agility(0, 0);
-   set_PassiveTalents(0, 0,0);
+  set_Strength(hp,At);
+   set_Agility(Sp, spat);
+   set_PassiveTalents(miss, crit,0);
    set_Level(0, 0);
   // set_SetPlayer(firstWeapon, firstArmor);
 
@@ -102,7 +100,7 @@ int Goodcharacter::get_HP()
 }
 int Goodcharacter::get_AT()
 {
-    return Strength.get_AttackPoints()+get_EqAT();
+    return Strength.get_AttackPoints();//+get_EqAT();
 }
 
 // set and get commands for AgilityCharacters
@@ -143,11 +141,11 @@ int Goodcharacter::get_MISS()
 }
 int Goodcharacter::get_CRIT()
 {
-    PassiveTalents.get_ChanceToCritDamage();
+    return PassiveTalents.get_ChanceToCritDamage();
 }
 int Goodcharacter::get_STEAL()
 {
-    PassiveTalents.get_StealPoints();
+   return  PassiveTalents.get_StealPoints();
 }
 
 // set and get commands for  Level Points
@@ -167,7 +165,7 @@ int Goodcharacter::get_EXP()
 }
 int Goodcharacter::get_LVL()
 {
-    Level.get_Lvl();
+    return  Level.get_Lvl();
 }
 
 // get characters equipment of player
@@ -175,6 +173,10 @@ int Goodcharacter::get_AR()
 {
 return	SetPlayer.get_EqArmor();
 }
+  void Goodcharacter::set_AR(int Ar)
+  {
+     SetPlayer.set_EqArmor(Ar);
+  }
 int Goodcharacter::get_EqAT()
 {
     return	SetPlayer.get_EqWeaponsAT();
