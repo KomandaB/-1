@@ -54,6 +54,21 @@ number_of_AT = 5;
 player_SPAT_dominate = 1;
 Monster_SPAT_dominate = 1;
 
+
+//if (( player->get_SPAT() / Monster->get_SPAT() == 2) || (player->get_SPAT() / Monster->get_SPAT() > 2))
+//        {
+//    player_SPAT_dominate = 2;
+//    //переменная, которая запоминает, кто бьёт 2 раза ( игрок 0, монстр 1)
+//    number_of_AT = 0;
+//}
+//else{
+// if ((( Monster->get_SPAT() / player->get_SPAT()) == 2)  || ( (Monster->get_SPAT() / player->get_SPAT()) > 2  ))
+// {
+//      Monster_SPAT_dominate = 2;
+//        number_of_AT = 1;
+// }
+//}
+
 if (( player->get_SPAT()  == Monster->get_SPAT()*2) || ((player->get_SPAT() - 2*Monster->get_SPAT()) > 0))
         {
     player_SPAT_dominate = 2;
@@ -66,6 +81,7 @@ if (( player->get_SPAT()  == Monster->get_SPAT()*2) || ((player->get_SPAT() - 2*
       Monster_SPAT_dominate = 2;
         number_of_AT = 1;
  }
+
 
 
 
@@ -433,6 +449,7 @@ void FaitWindow::defense()
               }
          }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+<<<<<<< HEAD
 
          if ( ((player_SPAT_dominate == 2)) &&(bit == 0)&&(number_of_AT  == 0))
 
@@ -458,6 +475,32 @@ void FaitWindow::defense()
          }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+=======
+         if ( ((player_SPAT_dominate == 2)) &&(bit == 0)&&(number_of_AT  == 0))
+
+                  {
+
+
+                       //BadCharacter* Monster=entites->getBadCharacterById(currentMonsterId);
+                       Goodcharacter* player=entites->getGoodCharacterById(0);
+                      player->set_AR(player->get_AR() + 5);
+                       damage();
+                       player->set_AR(player->get_AR() - 5);
+
+                       bit = 1;
+                       unblock_AT();
+
+                       if (player->get_HP() == 0 || player->get_HP() < 0)
+                       {
+                            ui->Textbatlle->setText(ui->Textbatlle->toPlainText()+ "\n"+"       GAME       OVER     ");
+                            pause();
+                           emit stateChanged(GraphicStates::MAIN_MENU,0);
+
+                       }
+                  }
+
+
+>>>>>>> 30c2f3215cf3903be0243025255290fd9b31d745
 }
 
 void FaitWindow::evasion()
