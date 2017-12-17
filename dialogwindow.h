@@ -28,7 +28,7 @@ private:
 
 private slots:
    void goToMenuSlot();
-   void goToMapSlot();
+   void goToMapSlot(int ID);
   // void nextPhrase(QString phrase, QString name);
    void nextPhrase(int ID);
 signals:

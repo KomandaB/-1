@@ -12,7 +12,7 @@ DialogWindow::DialogWindow(QWidget *parent, GameEntites *entites, int ID) :
 
 
      ui->textEdit->setPlainText("...");
-     connect(ui->toMapBtn, &QPushButton::clicked, this, &DialogWindow::goToMapSlot);
+     connect(ui->toMapBtn, &QPushButton::clicked, this, [=](){goToMapSlot(currentChacterID);});
     connect(ui->toMenuBtn, &QPushButton::clicked, this, &DialogWindow::goToMenuSlot);
    // connect(ui->var1, &QPushButton::clicked, this, &DialogWindow::nextPhrase);
     connect(ui->responseButton, &QPushButton::clicked, this, [=] () {
@@ -30,7 +30,6 @@ DialogWindow::~DialogWindow()
 void DialogWindow::ChangeCharacterId(int ID)
 {
     currentChacterID=ID;
-   // qDebug()<<ID<<"IID";
 }
 
 void DialogWindow::goToMenuSlot()
@@ -38,9 +37,9 @@ void DialogWindow::goToMenuSlot()
     emit stateChanged(GraphicStates::MAIN_MENU,0);
 }
 
-void DialogWindow::goToMapSlot()
+void DialogWindow::goToMapSlot(int ID)
 {
-    emit stateChanged(GraphicStates::GAME_MAP,0);
+    emit stateChanged(GraphicStates::GAME_MAP,ID);
 }
 
 //void DialogWindow::nextPhrase(QString phrase, QString name)
