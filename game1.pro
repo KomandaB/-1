@@ -91,8 +91,7 @@ SUBDIRS += \
 DISTFILES += \
     metro.jpg\
     start_background.png \
-    station_1.png \
-    station_1.png
+    start.png
 
 
 RESOURCES += \

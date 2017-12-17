@@ -34,6 +34,7 @@ void StationWindow::ChangeStation(int newId)
     ui->label->setText("Поговорить с человеком");
     ui->textEdit->setText(entetis->getStationById(newId)->getStationInformation());
     ui->textEdit_2->setText("Ты находишься на станции "+ entetis->getStationById(newId)->getStationName());//готовая штука
+    ui->StationBackground->setStyleSheet("border-image: url(:/start.png);");//нужно сделать динамическое изменеие фона
     for (auto it : entetis->getGoodCharacterById(0)->getInventory()){
         Item* tempItem = entetis->getItemById(it);
         switch(tempItem->getType()){
