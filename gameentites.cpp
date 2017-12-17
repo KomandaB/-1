@@ -126,6 +126,7 @@ void GameEntites::initNonPlayerCharacters(){
 
     NonPlayerCharactersMap[1] = NonPlayerCharacter(1, "Mike");
     NonPlayerCharactersMap[1].setNonPlayerCharacterPhrases("Hi next My name is mike");
+    NonPlayerCharactersMap[1].setPlayerAnswers("Hi! next Glad to meet you, Mike");
 }
 void GameEntites::initItem(){
     ItemMap[0]= new Armor(0,"Assault",3, ItemType::ARMOR, 5);

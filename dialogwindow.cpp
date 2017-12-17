@@ -22,6 +22,7 @@ DialogWindow::DialogWindow(QWidget *parent, GameEntites *entites, int ID) :
 
 }
 
+
 DialogWindow::~DialogWindow()
 {
     delete ui;
@@ -51,15 +52,44 @@ void DialogWindow::goToMapSlot(int ID)
 void DialogWindow::nextPhrase(int ID)
 {
 
+if(isJustStarted){
 
+    if(!entites->getNonPlayerCharacterById(ID)->isEndOfPhrases()){
+      ui->textEdit->append(entites->getNonPlayerCharacterById(ID)->getNonPlayerCharacterName()+": "+entites->getNonPlayerCharacterById(ID)->getNonPlayerCharacterPhrase());
+    }
 
-       // ui->responseButton->setEnabled(true);
-        ui->textEdit->append(entites->getNonPlayerCharacterById(ID)->getNonPlayerCharacterName()+": "+entites->getNonPlayerCharacterById(ID)->getNonPlayerCharacterPhrase());
-        if(entites->getNonPlayerCharacterById(ID)->isEndOfPhrases()){
-          //   ui->responseButton->setDisabled(true);
-
-        }else{
-         //   ui->responseButton->setEnabled(true);
+    if(!entites->getNonPlayerCharacterById(ID)->isEndOfAnswers()){
+        //ui->textEdit->append("Вы: "+entites->getNonPlayerCharacterById(ID)->getPlayerAnswer());
+        if(!entites->getNonPlayerCharacterById(ID)->isEndOfAnswers()){
+          ui->responseButton->setText(entites->getNonPlayerCharacterById(ID)->getLastPlayerAnswer());
         }
+    }
+    isJustStarted = false;
+}
+else{
+    if(!entites->getNonPlayerCharacterById(ID)->isEndOfAnswers()){
+       ui->textEdit->append("Вы: "+entites->getNonPlayerCharacterById(ID)->getPlayerAnswer());
+    }
+    if(!entites->getNonPlayerCharacterById(ID)->isEndOfPhrases()){
+      ui->textEdit->append(entites->getNonPlayerCharacterById(ID)->getNonPlayerCharacterName()+": "+entites->getNonPlayerCharacterById(ID)->getNonPlayerCharacterPhrase());
+    }
+    if(!entites->getNonPlayerCharacterById(ID)->isEndOfAnswers()){
+      ui->responseButton->setText(entites->getNonPlayerCharacterById(ID)->getLastPlayerAnswer());
+    }else{
+        isJustStarted = true;
+    }
+}
+
+}
+
+void DialogWindow::showEvent(QShowEvent *  /* event */)
+{
+
+
+        ui->textEdit->setPlainText("...");
+
+        ui->responseButton->setText("Поговорить");
+
+
 
 }

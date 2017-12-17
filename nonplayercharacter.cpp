@@ -31,9 +31,20 @@ int NonPlayerCharacter::getLastPhraseIndex(){
 }
 
 QString NonPlayerCharacter::getLastPlayerAnswer(){
-
-return PlayerAnswers[lastAnswerIndex];
-
+//    if(!isEndOfAnswers()){
+//return PlayerAnswers[lastAnswerIndex];}
+//    else{
+//        return "Нам больше не о чем говорить";
+//    }
+    if(!endOfAnswers){
+        if(lastAnswerIndex<PlayerAnswers.length()){
+            return PlayerAnswers[lastAnswerIndex];
+        }else if(lastAnswerIndex+1>=PlayerAnswers.length()){
+            endOfAnswers=true;
+            return "Нам больше не о чем говорить";
+        }
+    }
+    return 0;
 
 }
 
