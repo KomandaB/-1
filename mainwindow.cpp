@@ -60,6 +60,15 @@ void MainWindow::stateChangedSlot(GraphicStates newState, int ID)
         break;
     }
     case GraphicStates::FAITWINDOW: {
+<<<<<<< HEAD
+//        for(int i=0;i<=(gameHandler->getEntites()->BadCharactersMap.size());i++){
+//        gameHandler->getEntites()->getBadCharacterById(0)->set_ToStationId(ID);
+//        }
+           faitWindow->changeAtatk(ID);
+        //faitWindow->get_IdStation(ID);//его можно присваивать всем монстрам
+        windowHandler->setCurrentWidget(faitWindow);
+        break;
+=======
     // for(int i=0;i<=(gameHandler->getEntites()->BadCharactersMap.size());i++){
     // gameHandler->getEntites()->getBadCharacterById(0)->set_ToStationId(ID);
     // }
@@ -67,6 +76,7 @@ void MainWindow::stateChangedSlot(GraphicStates newState, int ID)
     //faitWindow->get_IdStation(ID);//его можно присваивать всем монстрам
     windowHandler->setCurrentWidget(faitWindow);
     break;
+>>>>>>> f09956f46a0b1d74c929fea4e4bfa0e36c665272
     }
     }
 

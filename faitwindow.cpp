@@ -54,6 +54,21 @@ number_of_AT = 5;
 player_SPAT_dominate = 1;
 Monster_SPAT_dominate = 1;
 
+<<<<<<< HEAD
+//if (( player->get_SPAT() / Monster->get_SPAT() == 2) || (player->get_SPAT() / Monster->get_SPAT() > 2))
+//        {
+//    player_SPAT_dominate = 2;
+//    //переменная, которая запоминает, кто бьёт 2 раза ( игрок 0, монстр 1)
+//    number_of_AT = 0;
+//}
+//else{
+// if ((( Monster->get_SPAT() / player->get_SPAT()) == 2)  || ( (Monster->get_SPAT() / player->get_SPAT()) > 2  ))
+// {
+//      Monster_SPAT_dominate = 2;
+//        number_of_AT = 1;
+// }
+//}
+=======
 if (( player->get_SPAT()  == Monster->get_SPAT()*2) || ((player->get_SPAT() - 2*Monster->get_SPAT()) > 0))
         {
     player_SPAT_dominate = 2;
@@ -67,6 +82,7 @@ if (( player->get_SPAT()  == Monster->get_SPAT()*2) || ((player->get_SPAT() - 2*
         number_of_AT = 1;
  }
 
+>>>>>>> f09956f46a0b1d74c929fea4e4bfa0e36c665272
 
 
  if ((player->get_SP()) > (Monster->get_SP()))
