@@ -449,6 +449,30 @@ void FaitWindow::defense()
               }
          }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+         if ( ((player_SPAT_dominate == 2)) &&(bit == 0)&&(number_of_AT  == 0))
+
+                  {
+
+
+                       //BadCharacter* Monster=entites->getBadCharacterById(currentMonsterId);
+                       Goodcharacter* player=entites->getGoodCharacterById(0);
+                      player->set_AR(player->get_AR() + 5);
+                       damage();
+                       player->set_AR(player->get_AR() - 5);
+
+                       bit = 1;
+                       unblock_AT();
+
+                       if (player->get_HP() == 0 || player->get_HP() < 0)
+                       {
+                            ui->Textbatlle->setText(ui->Textbatlle->toPlainText()+ "\n"+"       GAME       OVER     ");
+                            pause();
+                           emit stateChanged(GraphicStates::MAIN_MENU,0);
+
+                       }
+                  }
+
+
 }
 
 void FaitWindow::evasion()
