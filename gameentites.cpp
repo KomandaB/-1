@@ -106,6 +106,7 @@ void GameEntites::initBadCharacters()
 //    GoodCharactersMap[1] = GoodCharacter(1,"Makcim");
 
 
+<<<<<<< HEAD
     BadCharactersMap[0] = BadCharacter(50, 15 ,10 , 30, 40 , 2 , 0);// Dangerouse rat 
     BadCharactersMap[1] = BadCharacter(40, 12 ,5 ,10 , 1 , 3 , 1);// 
     BadCharactersMap[2] = BadCharacter(40, 12 ,5 ,25 , 10 , 3 , 2);// 
@@ -115,6 +116,14 @@ void GameEntites::initBadCharacters()
     
     BadCharactersMap[4] = BadCharacter(20,50,10,1,1,3,4);// 
     BadCharactersMap[5] = BadCharacter(20,50,0,0,0,3,5);//
+=======
+    BadCharactersMap[0] = BadCharacter(50, 15 ,10 , 30,  40  ,  2 ,  0);// Dangerouse rat
+        BadCharactersMap[1] = BadCharacter(40, 12 ,5  ,10 ,    1 ,  3 ,  1);//
+        BadCharactersMap[2] = BadCharacter(40, 12 ,5  ,25 ,    10 ,  3 ,  2);//
+        BadCharactersMap[3] = BadCharacter(20,50,1,1,1,3,    3     );//
+        BadCharactersMap[4] = BadCharacter(20,50,10,1,1,3,4);//
+        BadCharactersMap[5] = BadCharacter(20,50,0,0,0,3,5);//
+>>>>>>> 05d016c82689ab97af203284763137ec8ba12859
 //weaponsMap[0]=(12,"ownldwk");
 
     //TODO: INITIALISE MORE
@@ -133,7 +142,7 @@ void GameEntites::initNonPlayerCharacters(){
 
     NonPlayerCharactersMap[0] = NonPlayerCharacter(0, "Дедан");
     NonPlayerCharactersMap[0].setNonPlayerCharacterPhrases("Здравствуй next *делает глубокий вздох* next *открывает глаза* Ты стал мне сыном, но я понимаю, что ты должен идти своей дорогой. Помни тому, что я тебя учил, бойся выйперов и анимешаников, они обезумели без бурятских мультиков и голых рисованных девушек. Иди же, кохай на встречу приключениям");
-    NonPlayerCharactersMap[0].setPlayerAnswers("Кама сэмпай, я наконец решился покинуть это место next Учитель, я должен покинуть у станцию, я должен найти свое место, в этом прогнившем мире, полном боли, страданий и унижения next Спасибо, мастер ");
+    NonPlayerCharactersMap[0].setPlayerAnswers("Кама сэмпай, я наконец решился покинуть это место next Учитель, я должен покинуть у станцию, я должен найти свое место \n в этом прогнившем мире, полном боли, страданий и унижения next Спасибо, мастер ");
 
     NonPlayerCharactersMap[1] = NonPlayerCharacter(1, "Электрик");
     NonPlayerCharactersMap[1].setNonPlayerCharacterPhrases("*работает над щитком* next *отрывается от работы, смотрит на вас, на фонарь. Берет его, внимательно разглядывает и начинает над ним колдовать* Держи, да пребудут с тобой фиксики next Ну, фиксики, они живут в технике и чинят ее, когда ломается *внезапно хватает вас за голову, притягивает к себе и шепчет* Но это, большой-большой секрет. Меня, кстати Дядя Федор зовут next Послушай, Кирилл, когда-то я был такой же, как ты, молодой, храбрый, меня то же вела дорого приключений, но мне прострелили колено next Бог в помощь, а как ты узнал, что я могу помочь? next Но, у нас нет охранников, да и не было никогда. Зачем они нам? Тут края тихие, спокойные");
