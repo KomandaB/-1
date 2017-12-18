@@ -106,7 +106,6 @@ void GameEntites::initBadCharacters()
 //    GoodCharactersMap[1] = GoodCharacter(1,"Makcim");
 
 
-<<<<<<< HEAD
     BadCharactersMap[0] = BadCharacter(50, 15 ,10 , 30, 40 , 2 , 0);// Dangerouse rat 
     BadCharactersMap[1] = BadCharacter(40, 12 ,5 ,10 , 1 , 3 , 1);// 
     BadCharactersMap[2] = BadCharacter(40, 12 ,5 ,25 , 10 , 3 , 2);// 
@@ -116,14 +115,12 @@ void GameEntites::initBadCharacters()
     
     BadCharactersMap[4] = BadCharacter(20,50,10,1,1,3,4);// 
     BadCharactersMap[5] = BadCharacter(20,50,0,0,0,3,5);//
-=======
     BadCharactersMap[0] = BadCharacter(50, 15 ,10 , 30,  40  ,  2 ,  0);// Dangerouse rat
         BadCharactersMap[1] = BadCharacter(40, 12 ,5  ,10 ,    1 ,  3 ,  1);//
         BadCharactersMap[2] = BadCharacter(40, 12 ,5  ,25 ,    10 ,  3 ,  2);//
         BadCharactersMap[3] = BadCharacter(20,50,1,1,1,3,    3     );//
         BadCharactersMap[4] = BadCharacter(20,50,10,1,1,3,4);//
         BadCharactersMap[5] = BadCharacter(20,50,0,0,0,3,5);//
->>>>>>> 05d016c82689ab97af203284763137ec8ba12859
 //weaponsMap[0]=(12,"ownldwk");
 
     //TODO: INITIALISE MORE

@@ -15,9 +15,7 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -29,8 +27,7 @@ public:
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout;
     QPushButton *go_to_menu;
-    QMenuBar *menubar;
-    QStatusBar *statusbar;
+    QGridLayout *gridLayout_2;
 
     void setupUi(QWidget *BackPack)
     {
@@ -42,7 +39,7 @@ public:
         centralwidget->setGeometry(QRect(90, 70, 340, 300));
         gridLayoutWidget = new QWidget(centralwidget);
         gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(90, 110, 102, 25));
+        gridLayoutWidget->setGeometry(QRect(90, 110, 102, 121));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
@@ -51,12 +48,11 @@ public:
 
         gridLayout->addWidget(go_to_menu, 0, 0, 1, 1);
 
-        menubar = new QMenuBar(BackPack);
-        menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 21));
-        statusbar = new QStatusBar(BackPack);
-        statusbar->setObjectName(QStringLiteral("statusbar"));
-        statusbar->setGeometry(QRect(0, 0, 3, 18));
+        gridLayout_2 = new QGridLayout();
+        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
+
+        gridLayout->addLayout(gridLayout_2, 1, 0, 1, 1);
+
 
         retranslateUi(BackPack);
 
