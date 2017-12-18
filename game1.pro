@@ -51,7 +51,9 @@ SOURCES += \
     item.cpp \
     backpack.cpp \
     dealerwindow.cpp \
-    dealer.cpp
+    dealer.cpp \
+    prolog.cpp \
+    bandage.cpp
 
 HEADERS += \
     goodcharacter.h \
@@ -80,7 +82,9 @@ HEADERS += \
     item.h \
     backpack.h \
     dealerwindow.h \
-    dealer.h
+    dealer.h \
+    prolog.h \
+    bandage.h
 
 
 FORMS += \
@@ -91,7 +95,8 @@ FORMS += \
     wingame.ui \
     faitwindow.ui \
     backpack.ui \
-    dealerwindow.ui
+    dealerwindow.ui \
+    prolog.ui
 
 SUBDIRS += \
     game1.pro

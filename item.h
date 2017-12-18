@@ -1,7 +1,7 @@
 #ifndef ITEM_H
 #define ITEM_H
 #include<QString>
-enum class ItemType{WEAPONS,ARMOR};
+enum class ItemType{WEAPONS,ARMOR,BANDAGE};
 
 class Item
 {

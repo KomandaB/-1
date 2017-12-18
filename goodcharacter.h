@@ -35,11 +35,12 @@ private:
     int Ammunition;
     int CurrentArmor;
     int CurrentWearpons;
+    int CurrentBandage;
 
 public:
      QVector<int>Inventory;
     Goodcharacter();
-    Goodcharacter(int hp,int At,int ar, int Sp, int spat,int miss,int crit, int coins,int currentArmor,int currentWeapons);
+    Goodcharacter(int hp,int At,int ar, int Sp, int spat,int miss,int crit, int coins,int currentArmor,int currentWeapons,int currentBandage);
     void addItem(int itemId);
         void set_Strength(int Hp, int At);
 
@@ -57,7 +58,7 @@ public:
 
         int get_currentWearpons();
 
-        void set_SetPlayer(Weapons At ,Armor Ar );
+        void set_SetPlayer(Weapons At ,Armor Ar, bandage Bandage );
 
         void set_Goodcharacter(bool live, int coins);
 
@@ -140,6 +141,8 @@ public:
 
 
             QVector<int> getInventory() const;
+            int getCurrentBandage() const;
+            void setCurrentBandage(int value);
 };
 
 #endif // GOODCHARACTER_H

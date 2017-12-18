@@ -52,14 +52,19 @@ private:
     void set_enabl();
      void block_AT();
      void unblock_AT();
+     void monster_is_dead();
 private slots:
     void attack();
     void go_to_station(int ID);
-     void go_to_bag(int ID);
+    void go_to_bandage();
     void on_def_clicked();
     void set_round();
     void on_miss_clicked();
 
+
+    void on_battle_clicked();
+
+    void on_go_clicked();
 
 signals:
 

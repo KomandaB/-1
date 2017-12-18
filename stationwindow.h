@@ -27,10 +27,10 @@ private:
     GameEntites *entetis;
 private slots:
     void btn_1_clicked(int ID);
-    void btn_2_clicked();
     void btn_3_clicked(int id);
     void winClicked();
     void goTuMenuClicked();
+    void goTuBagClicked(int Id);
 
 signals:
     void stateChanged(GraphicStates newState,int ID);//создать отдельные сигналы

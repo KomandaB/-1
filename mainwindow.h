@@ -13,6 +13,7 @@
 #include "faitwindow.h"
 #include "dialogwindow.h"
 #include "backpack.h"
+#include "prolog.h"
 
 
 namespace Ui {
@@ -36,6 +37,7 @@ private:
     StationWindow *stationWindow;
     MainMenu *mainMenu;
     WinGame *winGame;
+     Prolog * prolog;
     BackPack *backPack;
     FaitWindow *faitWindow;
     QStackedWidget *windowHandler;

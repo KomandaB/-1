@@ -9,6 +9,7 @@
 #include "gameentites.h"
 #include "gamehandler.h"
 #include "goodcharacter.h"
+#include "faitwindow.h"
 
 
 namespace Ui {
@@ -22,7 +23,7 @@ class BackPack : public QWidget
 public:
     explicit BackPack(QWidget *parent = 0, GameEntites *entites=0, int ID=0);
     ~BackPack();
-    void ChangeBackpack(int personID);
+    void ChangeBackpack();
 
 private:
     Ui::BackPack *ui;
@@ -31,6 +32,7 @@ signals:
     void stateChanged(GraphicStates newState,int ID);
 private slots:
     void GoToFaitCliked(int ID);
+    void DressingUp(int id);
 
 };
 

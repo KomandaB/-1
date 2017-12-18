@@ -1,13 +1,14 @@
 #include "goodcharacter.h"
 
 
-Goodcharacter::Goodcharacter(int hp, int At, int ar, int Sp, int spat, int miss, int crit, int coins, int currentArmor, int currentWeapons) :
+Goodcharacter::Goodcharacter(int hp, int At, int ar, int Sp, int spat, int miss, int crit, int coins, int currentArmor, int currentWeapons, int currentBandage) :
 
 
    armorPoints (ar),
    Ammunition (coins),
    CurrentArmor(currentArmor),
-   CurrentWearpons(currentWeapons)
+   CurrentWearpons(currentWeapons),
+ CurrentBandage(currentBandage)
 
 {
   set_Strength(hp,At);
@@ -26,6 +27,16 @@ void Goodcharacter::addItem(int itemId)
 QVector<int> Goodcharacter::getInventory() const
 {
     return Inventory;
+}
+
+int Goodcharacter::getCurrentBandage() const
+{
+    return CurrentBandage;
+}
+
+void Goodcharacter::setCurrentBandage(int value)
+{
+    CurrentBandage = value;
 }
 
 Goodcharacter::Goodcharacter()
@@ -71,9 +82,9 @@ int Goodcharacter::get_currentWearpons()
 {
     return CurrentWearpons;
 }
-void Goodcharacter::set_SetPlayer(Weapons At ,Armor Ar )
+void Goodcharacter::set_SetPlayer(Weapons At , Armor Ar , bandage Bandage)
 {
-    SetPlayer.set_equipment(At, Ar);
+    SetPlayer.set_equipment(At, Ar, Bandage);
 }
 
 void Goodcharacter::set_Goodcharacter(bool live, int coins)

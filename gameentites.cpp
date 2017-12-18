@@ -128,9 +128,10 @@ void GameEntites::initBadCharacters()
 
 void GameEntites::initGoodCharacters()
 {
-    GoodCharactersMap[0]=Goodcharacter(100      ,9      ,10     ,20        ,10           , 5        ,5       ,100,0,1);
+    GoodCharactersMap[0]=Goodcharacter(100      ,9      ,10     ,20        ,10           , 5        ,5       ,100,0,1,1);
     GoodCharactersMap[0].addItem(0);
     GoodCharactersMap[0].addItem(1);
+      GoodCharactersMap[0].addItem(2);
 
 }
 
@@ -146,7 +147,7 @@ void GameEntites::initNonPlayerCharacters(){
     NonPlayerCharactersMap[1].setPlayerAnswers("Здравствуй мужик, не поможешь мне - фонарик чего-то барахлит next Кто-кто? next Приятно познакомится, Кирилл next Ладно, я пойду, спасибо за помощь, Федор next Мне Охранники посоветовали next Всего доброго");
 }
 void GameEntites::initItem(){
-    ItemMap[0]= new Armor(0,"Assault",3, ItemType::ARMOR, 5,10);
+    ItemMap[0]= new bandage (0,"Аптечка",3, ItemType::BANDAGE, 5);
     ItemMap[1] = new Weapons(1,"Melee Knife",3, ItemType::WEAPONS, 10,10);
     ItemMap[2]= new Armor(2,"Assault",3, ItemType::ARMOR, 5,10);
     ItemMap[3] = new Weapons(3,"Melee Knife",3, ItemType::WEAPONS, 10,10);

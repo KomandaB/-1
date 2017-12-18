@@ -7,9 +7,10 @@ FaitWindow::FaitWindow(QWidget *parent, GameEntites *entites, int ID) :
     entites(entites),
     currentMonsterId(ID)
 {
+
     ui->setupUi(this);
     connect(ui->btn_ataka,&QPushButton::clicked,this, &FaitWindow::attack);
-    connect(ui->bag,&QPushButton::clicked,this, &FaitWindow::go_to_bag);
+    connect(ui->bag,&QPushButton::clicked,this, &FaitWindow::go_to_bandage);
 
 }
 //сюда передавать Ид монстра
@@ -21,7 +22,15 @@ bool FaitWindow::get_enabl()
 {
     return btn_AT;
 }
-
+void pause()
+{
+    QTime timer;
+    timer.start () ;
+    for(;timer.elapsed() < 10000;)
+    {
+        qApp->processEvents(0);
+    }
+}
 
 
 
@@ -44,56 +53,48 @@ void FaitWindow::unblock_AT()
 
 void FaitWindow::changeAtatk(int ID)
 {
-BadCharacter* Monster=entites->getBadCharacterById(currentMonsterId);
-Goodcharacter* player=entites->getGoodCharacterById(0);
 
+ui->battle->setEnabled(1);
+ui->btn_ataka->setEnabled(0);
+ui->bag->setEnabled(0);
+ui->def->setEnabled(0);
+ui->miss->setEnabled(0);
+ ui->go->setEnabled(0);
 
+ ui->Textbatlle->setText(" ");
+ ui->PlayertextEdit->setText(" ");
+ ui->MonstertextEdit->setText(" ");
 currentMonsterId = ID;
-update();
+
+
+if ( ID == 1)
+{
+    ui->Textbatlle->setText(ui->Textbatlle->toPlainText()+ "\n"+  " Идя по тоннелю к следующей станции, Вы размышляли о разных вещах, вспоминали прошлую жизнь, прошлый мир.…  Под слабым светом фонаря на стенах вы разглядывали надписи, некоторые буквы были утеряны из-за времени, но что-то вам удавалось  разглядеть, по вашей щеке побежала скупая мужская слеза, вы прочувствовали всю боль от утраты потерянной эпохи…." + "\n" + "\n" +  "Погруженные в свои размышления, вы не заметили, как зашла в странный туман. Странный аромат витал в воздухе. Идя все дальше, вы услышали странный шепот, который становился все громче: «Подайте, помогите, кто, чем может ». Вы почувствовали в себе странное чувство, которое все нарастало, это было предчувствие беды. В дали вы увидели женский силуэт, который протягивал руки вперед, как-бы прося милостыню. Вы насторожились, достали свой клинок и стали приближаться к существу.  Но тут раздается резкий хруст стекла под ногами. Оно оборачивается, и вы видите нечто: исхудалое тело, из которого исходит странное свечение. Существо издает вопль и бросается на вас.""\n" + "\n");
+}
+if ( ID == 2)
+{
+    ui->Textbatlle->setText(ui->Textbatlle->toPlainText()+ "\n"+  "                               ");
+}
+if ( ID == 3)
+{
+    ui->Textbatlle->setText(ui->Textbatlle->toPlainText()+ "\n"+  "                               ");
+}
+if ( ID == 4)
+{
+    ui->Textbatlle->setText(ui->Textbatlle->toPlainText()+"\n"+  "                               ");
+}
+if ( ID == 5)
+{
+  ui->Textbatlle->setText(ui->Textbatlle->toPlainText()+ "\n"+  "                               ");
+}
+
+
 
 number_of_AT = 5;
 player_SPAT_dominate = 1;
 Monster_SPAT_dominate = 1;
 
 
-//if (( player->get_SPAT() / Monster->get_SPAT() == 2) || (player->get_SPAT() / Monster->get_SPAT() > 2))
-//        {
-//    player_SPAT_dominate = 2;
-//    //переменная, которая запоминает, кто бьёт 2 раза ( игрок 0, монстр 1)
-//    number_of_AT = 0;
-//}
-//else{
-// if ((( Monster->get_SPAT() / player->get_SPAT()) == 2)  || ( (Monster->get_SPAT() / player->get_SPAT()) > 2  ))
-// {
-//      Monster_SPAT_dominate = 2;
-//        number_of_AT = 1;
-// }
-//}
-
-if (( player->get_SPAT()  == Monster->get_SPAT()*2) || ((player->get_SPAT() - 2*Monster->get_SPAT()) > 0))
-        {
-    player_SPAT_dominate = 2;
-    //переменная, которая запоминает, кто бьёт 2 раза ( игрок 0, монстр 1)
-    number_of_AT = 0;
-}
-
- if (( Monster->get_SPAT() == player->get_SPAT()*2)  || ( (Monster->get_SPAT() - 2*player->get_SPAT()) > 0  ))
- {
-      Monster_SPAT_dominate = 2;
-        number_of_AT = 1;
- }
-
-
-
-
- if ((player->get_SP()) > (Monster->get_SP()))
- {
-unblock_AT();
- }
- else
- {
- block_AT();
- }
 
 }
 // функция обнавления характеристик персонажа
@@ -123,15 +124,7 @@ ui->MonstertextEdit->setText(ui->MonstertextEdit->toPlainText()+ "\n"+"Коли�
 
 // функция паузы делает нукую задержку
 
-void pause()
-{
-    QTime timer;
-    timer.start () ;
-    for(;timer.elapsed() < 5000;)
-    {
-        qApp->processEvents(0);
-    }
-}
+
 
 // Функция получения урона игроком для кнопки
 void FaitWindow::damage( )
@@ -212,11 +205,12 @@ void FaitWindow::attack()
 
     if ( (Monster->get_HP() == 0) ||  (Monster->get_HP() < 0))
     {
+         monster_is_dead();
 
-        unblock_AT();
-         ui->Textbatlle->setText(ui->Textbatlle->toPlainText()+ "\n"+" Вы получили " + QString::number(player->get_ammunition()+ Monster->get_ammunition()) + "   монет");
-        player->set_ammunition(player->get_ammunition()+ Monster->get_ammunition());
-       go_to_station(currentMonsterId); //TODO: Fix me
+//        unblock_AT();
+//         ui->Textbatlle->setText(ui->Textbatlle->toPlainText()+ "\n"+" Вы получили " + QString::number(player->get_ammunition()+ Monster->get_ammunition()) + "   монет");
+//        player->set_ammunition(player->get_ammunition()+ Monster->get_ammunition());
+//       go_to_station(currentMonsterId); //TODO: Fix me
 
     }
     else{
@@ -270,11 +264,11 @@ void FaitWindow::attack()
 
         if ( (Monster->get_HP() == 0) ||  (Monster->get_HP() < 0))
         {
-
-            unblock_AT();
-             ui->Textbatlle->setText(ui->Textbatlle->toPlainText()+ "\n"+" Вы получили " + QString::number(player->get_ammunition()+ Monster->get_ammunition()) + "   монет");
-            player->set_ammunition(player->get_ammunition()+ Monster->get_ammunition());
-           go_to_station(currentMonsterId); //TODO: Fix me
+ monster_is_dead();
+//            unblock_AT();
+//             ui->Textbatlle->setText(ui->Textbatlle->toPlainText()+ "\n"+" Вы получили " + QString::number(player->get_ammunition()+ Monster->get_ammunition()) + "   монет");
+//            player->set_ammunition(player->get_ammunition()+ Monster->get_ammunition());
+//           go_to_station(currentMonsterId); //TODO: Fix me
 
         }
         else{
@@ -330,11 +324,11 @@ void FaitWindow::attack()
 
         if ( (Monster->get_HP() == 0) ||  (Monster->get_HP() < 0))
         {
-
-            unblock_AT();
-             ui->Textbatlle->setText(ui->Textbatlle->toPlainText()+ "\n"+" Вы получили " + QString::number(player->get_ammunition()+ Monster->get_ammunition()) + "   монет");
-            player->set_ammunition(player->get_ammunition()+ Monster->get_ammunition());
-           go_to_station(currentMonsterId); //TODO: Fix me
+               monster_is_dead();
+//            unblock_AT();
+//             ui->Textbatlle->setText(ui->Textbatlle->toPlainText()+ "\n"+" Вы получили " + QString::number(player->get_ammunition()+ Monster->get_ammunition()) + "   монет");
+//            player->set_ammunition(player->get_ammunition()+ Monster->get_ammunition());
+//           go_to_station(currentMonsterId); //TODO: Fix me
 
         }
         else{
@@ -351,25 +345,21 @@ void FaitWindow::go_to_station(int ID)
     emit stateChanged(GraphicStates::GAME_MAP, ID);
 }
 
-void FaitWindow::go_to_bag(int ID)
+
+void FaitWindow::go_to_bandage()
 {
-     emit stateChanged(GraphicStates::BACKPACK, ID);
+    if (entites->getGoodCharacterById(0)->getCurrentBandage()>0){
+    entites->getGoodCharacterById(0)->set_HP(entites->getGoodCharacterById(0)->get_HP()+25);
+    entites->getGoodCharacterById(0)->setCurrentBandage(entites->getGoodCharacterById(0)->getCurrentBandage()-1);
+    if (entites->getGoodCharacterById(0)->get_HP()>100){
+        entites->getGoodCharacterById(0)->set_HP(100);
+    }
+    }
+    else{ //вывести что их нет
+    }
+changeAtatk(currentMonsterId);
 }
-
 // короче, пока что сделаю прибавку к ХП, потом нужно переделать под защиту
-
-
-
-
-//////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////
-/// //////////////////////////////////////////////////////////////////////////////////////////
-/// //////////////////////////////////////////////////////////////////////////////////////////
-/// //////////////////////////////////////////////////////////////////////////////////////////
-
-/// //////////////////////////////////////////////////////////////////////////////////////////
-/// //////////////////////////////////////////////////////////////////////////////////////////
-/// //////////////////////////////////////////////////////////////////////////////////////////
 
 
 
@@ -673,3 +663,86 @@ evasion();
 update();
 }
 
+
+void FaitWindow::on_battle_clicked()
+{
+    BadCharacter* Monster=entites->getBadCharacterById(currentMonsterId);
+    Goodcharacter* player=entites->getGoodCharacterById(0);
+ui->battle->setEnabled(0);
+ ui->Textbatlle->setText(" ");
+    update();
+
+    if (( player->get_SPAT()  == Monster->get_SPAT()*2) || ((player->get_SPAT() - 2*Monster->get_SPAT()) > 0))
+            {
+        player_SPAT_dominate = 2;
+        //переменная, которая запоминает, кто бьёт 2 раза ( игрок 0, монстр 1)
+        number_of_AT = 0;
+    }
+
+     if (( Monster->get_SPAT() == player->get_SPAT()*2)  || ( (Monster->get_SPAT() - 2*player->get_SPAT()) > 0  ))
+     {
+          Monster_SPAT_dominate = 2;
+            number_of_AT = 1;
+     }
+
+
+
+
+     if ((player->get_SP()) > (Monster->get_SP()))
+     {
+    unblock_AT();
+     }
+     else
+     {
+     block_AT();
+     }
+}
+
+void FaitWindow::monster_is_dead()
+{
+    BadCharacter* Monster=entites->getBadCharacterById(currentMonsterId);
+       Goodcharacter* player=entites->getGoodCharacterById(0);
+
+       ui->Textbatlle->setText(" ");
+       ui->PlayertextEdit->setText(" ");
+       ui->MonstertextEdit->setText(" ");
+
+
+       ui->battle->setEnabled(0);
+       ui->btn_ataka->setEnabled(0);
+       ui->bag->setEnabled(0);
+       ui->def->setEnabled(0);
+       ui->miss->setEnabled(0);
+       ui->go->setEnabled(1);
+
+    //unblock_AT();
+     ui->Textbatlle->setText(ui->Textbatlle->toPlainText()+ "\n"+" Вы получили " + QString::number(player->get_ammunition()+ Monster->get_ammunition()) + "   монет");
+    player->set_ammunition(player->get_ammunition()+ Monster->get_ammunition());
+
+    if ( currentMonsterId == 1)
+    {
+        ui->Textbatlle->setText(ui->Textbatlle->toPlainText()+ "\n"+  "Через несколько метров вы  находите дверь и заходите на станцию.Вы получили 15 монет Сделав последний рывок, вы рассекаете Тень на 2 части, и она исчезает. Вы идете дальше и видите скелеты разных людей в рваной одежде. Видимо другие жертвы Тени. Перед баррикадой, ведущей к станции, вы видите женский скелет, сжимающий другой, маленький, в старом, изодранном от старости платье. Чувство жалости переполняет вас. Вы начинаете понимать: "+"\n" "Девушка покинула станцию, что бы спасти свою дочь, но дверь ей никто не открыл и она так и умерла здесь, с дочерью на руках, а ее дух не нашел покоя."+"\n" +"Вы разбегаетесь, и со всей силы выбиваете проржавевшую дверь баррикады. "+"\n"+"\n"+"Путь открыт.");
+    }
+    if ( currentMonsterId == 2)
+    {
+        ui->Textbatlle->setText(ui->Textbatlle->toPlainText()+ "\n"+  "                               ");
+    }
+    if ( currentMonsterId == 3)
+    {
+        ui->Textbatlle->setText(ui->Textbatlle->toPlainText()+ "\n"+  "                               ");
+    }
+    if ( currentMonsterId == 4)
+    {
+        ui->Textbatlle->setText(ui->Textbatlle->toPlainText()+"\n"+  "                               ");
+    }
+    if ( currentMonsterId == 5)
+    {
+      ui->Textbatlle->setText(ui->Textbatlle->toPlainText()+ "\n"+  "                               ");
+    }
+
+}
+
+void FaitWindow::on_go_clicked()
+{
+     go_to_station(currentMonsterId); //TODO: Fix me
+}

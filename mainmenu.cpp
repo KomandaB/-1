@@ -22,5 +22,5 @@ MainMenu::~MainMenu()
 
 void MainMenu::startNewGameSlot()
 {
-    emit stateChanged(GraphicStates::GAME_MAP,0);
+    emit stateChanged(GraphicStates::PROLOG,0);
 }

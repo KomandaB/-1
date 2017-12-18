@@ -15,9 +15,11 @@ MainWindow::MainWindow(QWidget *parent) :
     stationWindow = new StationWindow(this,gameHandler->getEntites());
     mainMenu = new MainMenu(this);
     winGame=new WinGame(this);
+    prolog =new Prolog(this);
     backPack =new BackPack(this, gameHandler->getEntites());
     windowHandler = new QStackedWidget(this);
     windowHandler->addWidget(mainMenu);
+    windowHandler->addWidget(prolog);
     windowHandler->addWidget(stationWindow);
     windowHandler->addWidget(dialogWindow);
     windowHandler->addWidget(faitWindow);
@@ -29,6 +31,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(stationWindow, &StationWindow::stateChanged, this, &MainWindow::stateChangedSlot);
     connect(mainMenu, &MainMenu::stateChanged, this, &MainWindow::stateChangedSlot);
     connect(winGame,&WinGame::stateChanged,this,&MainWindow::stateChangedSlot);
+    connect(prolog,&Prolog::stateChanged,this,&MainWindow::stateChangedSlot);
     connect(backPack,&BackPack::stateChanged,this,&MainWindow::stateChangedSlot);
     connect(mainMenu, &MainMenu::closeApp, this, &MainWindow::close);
 
@@ -74,8 +77,13 @@ void MainWindow::stateChangedSlot(GraphicStates newState, int ID)
     break;
 
     }
+    case GraphicStates::PROLOG: {
+
+        windowHandler->setCurrentWidget(prolog);
+        break;
+    }
     case GraphicStates::BACKPACK: {
-        backPack->ChangeBackpack(ID);
+        backPack->ChangeBackpack();
         windowHandler->setCurrentWidget(backPack);
         break;
     }
