@@ -17,7 +17,7 @@ void GameHandler::startNewGame()
     currentGoodCharacterId = 0;
 
 
-    //Здесь должны быть описаны все станции, люди, объекты   ???
+    entites->initGame();//Здесь должны быть описаны все станции, люди, объекты   ???
     do
     {
 

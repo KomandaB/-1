@@ -25,6 +25,7 @@ public:
 
 private:
     Ui::Prolog *ui;
+     GameEntites *entetis;
 private slots:
    void go_to_menu_clicked();
 signals:

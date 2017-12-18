@@ -16,18 +16,26 @@
   <widget class="QTextEdit" name="textEdit">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>60</y>
-     <width>104</width>
-     <height>71</height>
+     <x>10</x>
+     <y>10</y>
+     <width>381</width>
+     <height>241</height>
     </rect>
+   </property>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:7pt;&quot;&gt;Пролог &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Calibri,sans-serif'; font-size:7pt;&quot;&gt;Это был лихой 2015  год 2015  год 2015  год . Вы проснулись в своей  комнате в старой коммуналке, после бурной ночи проведенной с друзьями. Вы обнаружили, что   друзья разъехались по домам, поставив чайник на плиту, вы принялись доедать остатки вчерашней пиццы. Ваше спокойствие нарушил звук сирены, которой раздался за окном. Вспомнив уроки ОБЖ, вы включили телевизор.&lt;br /&gt; Диктор взволновано говорила: &lt;br /&gt;Внимание жителей города N вам нужно немедленно проследовать в ближайшую станцию метрополитена! Началась 3-я мировая война! К городу направляются атомные боеголовки! &lt;br /&gt;Расчетное время прибытия   15 минут! &lt;br /&gt;Выронив остатки пиццы, вы сломя голову бежите к шкафу, одеваете, то, что попадает вам под руку, берете немного припасов и хватаете старый отцовский нож.&lt;br /&gt;Спустя  7 минут вы уже находились на станции метрополитена, раздался звук громкоговорителя, и начались закрываться затворки станции. Вы увидели, как люди, в надежде выжить, бросались вниз, лезли по головам, прыгали с большой высоты, некоторые были раздавлены затворками, началась всеобщая паника и ужас. &lt;br /&gt;Через 3 минуты, вы почувствовали мощный толчок, и вас сбило с ног и вы ударились головой об колонну и потеряли сознание….&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QPushButton" name="go_to_menu">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>190</y>
+     <x>320</x>
+     <y>270</y>
      <width>75</width>
      <height>23</height>
     </rect>

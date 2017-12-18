@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "settings.h"
+#include"gamehandler.h"
 
 namespace Ui {
 class MainMenu;
