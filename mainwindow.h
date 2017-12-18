@@ -12,6 +12,7 @@
 #include "wingame.h"
 #include "faitwindow.h"
 #include "dialogwindow.h"
+#include "backpack.h"
 
 
 namespace Ui {
@@ -35,6 +36,7 @@ private:
     StationWindow *stationWindow;
     MainMenu *mainMenu;
     WinGame *winGame;
+    BackPack *backPack;
     FaitWindow *faitWindow;
     QStackedWidget *windowHandler;
 public slots:

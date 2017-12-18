@@ -9,6 +9,7 @@ FaitWindow::FaitWindow(QWidget *parent, GameEntites *entites, int ID) :
 {
     ui->setupUi(this);
     connect(ui->btn_ataka,&QPushButton::clicked,this, &FaitWindow::attack);
+    connect(ui->bag,&QPushButton::clicked,this, &FaitWindow::go_to_bag);
 
 }
 //сюда передавать Ид монстра
@@ -348,6 +349,11 @@ void FaitWindow::attack()
 void FaitWindow::go_to_station(int ID)
 {
     emit stateChanged(GraphicStates::GAME_MAP, ID);
+}
+
+void FaitWindow::go_to_bag(int ID)
+{
+     emit stateChanged(GraphicStates::BACKPACK, ID);
 }
 
 // короче, пока что сделаю прибавку к ХП, потом нужно переделать под защиту

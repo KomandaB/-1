@@ -30,6 +30,7 @@ signals:
     void stateChanged(GraphicStates newState,int ID);
 private slots:
     void GoToFaitCliked(int ID);
+
 };
 
 #endif // BACKPACK_H

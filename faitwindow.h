@@ -55,6 +55,7 @@ private:
 private slots:
     void attack();
     void go_to_station(int ID);
+     void go_to_bag(int ID);
     void on_def_clicked();
     void set_round();
     void on_miss_clicked();
