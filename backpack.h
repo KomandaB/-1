@@ -8,6 +8,7 @@
 #include "settings.h"
 #include "gameentites.h"
 #include "gamehandler.h"
+#include "goodcharacter.h"
 
 
 namespace Ui {

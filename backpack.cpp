@@ -19,13 +19,13 @@ BackPack::~BackPack()
 
 void BackPack::ChangeBackpack(int personID)
 {
-    for (int i(0); i< entetis->getGoodCharacterById(0)->getInventory().size(); i++){
+    for (int it: entetis->getGoodCharacterById(0)->Inventory ){
         QPushButton* btn = new QPushButton();
-        QLabel* lbl = new QLabel("Пойти на станцию " +  entetis->getItemById(i)->getName() );
+    //    QLabel* lbl = new QLabel("Пойти на станцию " +  entetis->getItemById(it)->getName() );
        // btn->setObjectName(QString::number(ToMoveStation[i]));
         connect(ui->go_to_menu, &QPushButton::clicked, this, [=] () { GoToFaitCliked(personID); });//возможно сделать по другому
-        ui->gridLayout->addWidget(btn, 0 + i, 0);
-        ui->gridLayout->addWidget(lbl, 0 + i, 1);
+        ui->gridLayout->addWidget(btn, 0 +(int) it, 0);
+       // ui->gridLayout->addWidget(lbl, 0 + (int)it, 1);
     }
 }
 

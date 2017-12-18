@@ -49,7 +49,9 @@ SOURCES += \
     nonplayercharacter.cpp \
     goods.cpp \
     item.cpp \
-    backpack.cpp
+    backpack.cpp \
+    dealerwindow.cpp \
+    dealer.cpp
 
 HEADERS += \
     goodcharacter.h \
@@ -76,7 +78,9 @@ HEADERS += \
     nonplayercharacter.h \
     goods.h \
     item.h \
-    backpack.h
+    backpack.h \
+    dealerwindow.h \
+    dealer.h
 
 
 FORMS += \
@@ -86,7 +90,8 @@ FORMS += \
     mainwindow.ui \
     wingame.ui \
     faitwindow.ui \
-    backpack.ui
+    backpack.ui \
+    dealerwindow.ui
 
 SUBDIRS += \
     game1.pro

@@ -10,6 +10,7 @@ DialogWindow::DialogWindow(QWidget *parent, GameEntites *entites, int ID) :
 {
     ui->setupUi(this);
     ui->textEdit->setPlainText("...");
+   // ui->dialogAvatar->setStyle("background-image: url(:/"+entites->getNonPlayerCharacterById(ID)->getNonPlayerCharacterName()+".png);");
 
     connect(ui->toMapBtn, &QPushButton::clicked, this, [=](){goToMapSlot(currentChacterID);});
 
@@ -44,7 +45,7 @@ void DialogWindow::goToMapSlot(int ID)
 
 void DialogWindow::nextPhrase(int ID)
 {
-
+//ui->dialogAvatar->setStyle("background-image: url(:/"+entites->getNonPlayerCharacterById(ID)->getNonPlayerCharacterName()+".png);");
     if(isJustStarted){
 
         if(!entites->getNonPlayerCharacterById(ID)->isEndOfPhrases()){
@@ -76,6 +77,8 @@ void DialogWindow::nextPhrase(int ID)
 
 void DialogWindow::showEvent(QShowEvent *  /* event */)
 {
+
+
     ui->textEdit->setPlainText("...");
     ui->responseButton->setText("Поговорить");
 }

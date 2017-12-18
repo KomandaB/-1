@@ -1,6 +1,6 @@
 #ifndef DIALOGWINDOW_H
 #define DIALOGWINDOW_H
-
+#include <QtWidgets>
 #include <QWidget>
 #include <QTextBrowser>
 #include "settings.h"
@@ -9,6 +9,7 @@
 #include "gameentites.h"
 #include "station.h"
 #include"gamehandler.h"
+
 
 namespace Ui {
 class DialogWindow;
