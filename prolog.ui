@@ -6,36 +6,45 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>1280</width>
+    <height>720</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QTextEdit" name="textEdit">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>381</width>
-     <height>241</height>
-    </rect>
-   </property>
-   <property name="html">
-    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:7pt;&quot;&gt;Пролог &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Calibri,sans-serif'; font-size:7pt;&quot;&gt;Это был лихой 2015  год 2015  год 2015  год . Вы проснулись в своей  комнате в старой коммуналке, после бурной ночи проведенной с друзьями. Вы обнаружили, что   друзья разъехались по домам, поставив чайник на плиту, вы принялись доедать остатки вчерашней пиццы. Ваше спокойствие нарушил звук сирены, которой раздался за окном. Вспомнив уроки ОБЖ, вы включили телевизор.&lt;br /&gt; Диктор взволновано говорила: &lt;br /&gt;Внимание жителей города N вам нужно немедленно проследовать в ближайшую станцию метрополитена! Началась 3-я мировая война! К городу направляются атомные боеголовки! &lt;br /&gt;Расчетное время прибытия   15 минут! &lt;br /&gt;Выронив остатки пиццы, вы сломя голову бежите к шкафу, одеваете, то, что попадает вам под руку, берете немного припасов и хватаете старый отцовский нож.&lt;br /&gt;Спустя  7 минут вы уже находились на станции метрополитена, раздался звук громкоговорителя, и начались закрываться затворки станции. Вы увидели, как люди, в надежде выжить, бросались вниз, лезли по головам, прыгали с большой высоты, некоторые были раздавлены затворками, началась всеобщая паника и ужас. &lt;br /&gt;Через 3 минуты, вы почувствовали мощный толчок, и вас сбило с ног и вы ударились головой об колонну и потеряли сознание….&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-  </widget>
+  <property name="styleSheet">
+   <string notr="true">QTextEdit{
+font: 6pt &quot;Press Start 2P&quot;;
+color: white;
+	background-color: rgba(255, 255, 255, 0);
+
+}
+
+QPushButton { 
+background-color: rgba(255, 255, 255, 0);
+color:white;
+}
+
+QPushButton:hover{
+
+color: rgb(122, 122, 122);
+}
+QPushButton:pressed{
+color:rgb(208, 0, 177);
+}
+
+QLabel{
+font: 7pt &quot;Press Start 2P&quot;;
+color: rgb(255, 255, 255);
+}
+</string>
+  </property>
   <widget class="QPushButton" name="go_to_menu">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>270</y>
+     <x>900</x>
+     <y>460</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -44,6 +53,48 @@ p, li { white-space: pre-wrap; }
     <string>делее</string>
    </property>
   </widget>
+  <widget class="QGraphicsView" name="graphicsView">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1280</width>
+     <height>720</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(12, 12, 12);</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>30</y>
+     <width>611</width>
+     <height>411</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="text">
+    <string>Пролог 
+Это был лихой 2015  год 2015  год 2015  год . Вы проснулись в своей  комнате в старой коммуналке, после бурной ночи проведенной с друзьями. Вы обнаружили, что   друзья разъехались по домам, поставив чайник на плиту, вы принялись доедать остатки вчерашней пиццы. Ваше спокойствие нарушил звук сирены, которой раздался за окном. Вспомнив уроки ОБЖ, вы включили телевизор.
+ Диктор взволновано говорила: 
+Внимание жителей города N вам нужно немедленно проследовать в ближайшую станцию метрополитена! Началась 3-я мировая война! К городу направляются атомные боеголовки! 
+Расчетное время прибытия   15 минут! 
+Выронив остатки пиццы, вы сломя голову бежите к шкафу, одеваете, то, что попадает вам под руку, берете немного припасов и хватаете старый отцовский нож.
+Спустя  7 минут вы уже находились на станции метрополитена, раздался звук громкоговорителя, и начались закрываться затворки станции. Вы увидели, как люди, в надежде выжить, бросались вниз, лезли по головам, прыгали с большой высоты, некоторые были раздавлены затворками, началась всеобщая паника и ужас. 
+Через 3 минуты, вы почувствовали мощный толчок, и вас сбило с ног и вы ударились головой об колонну и потеряли сознание….</string>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <zorder>graphicsView</zorder>
+  <zorder>go_to_menu</zorder>
+  <zorder>label</zorder>
  </widget>
  <resources/>
  <connections/>

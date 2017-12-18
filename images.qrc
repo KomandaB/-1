@@ -10,5 +10,6 @@
         <file>Обводный канал.png</file>
         <file>dialogWindowBackground.png</file>
         <file>Дедан.png</file>
+        <file>avatar.png</file>
     </qresource>
 </RCC>

@@ -54,6 +54,10 @@ public:
 "color:rgb(208, 0, 177);\n"
 "}\n"
 "\n"
+"QPushButton:disabled{\n"
+"color:rgb(70, 70, 70);\n"
+"}\n"
+"\n"
 "QTextEdit{\n"
 "font: 6pt \"Press Start 2P\";\n"
 "color: white;\n"
@@ -68,7 +72,7 @@ public:
         dialogAvatar = new QGraphicsView(DialogWindow);
         dialogAvatar->setObjectName(QStringLiteral("dialogAvatar"));
         dialogAvatar->setGeometry(QRect(520, 30, 241, 241));
-        dialogAvatar->setStyleSheet(QString::fromUtf8("background-image: url(:/\320\224\320\265\320\264\320\260\320\275.png);"));
+        dialogAvatar->setStyleSheet(QStringLiteral("background-image: url(:/avatar.png);"));
         responseButton = new QPushButton(DialogWindow);
         responseButton->setObjectName(QStringLiteral("responseButton"));
         responseButton->setGeometry(QRect(70, 560, 601, 91));

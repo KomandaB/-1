@@ -70,6 +70,7 @@ void DialogWindow::nextPhrase(int ID)
             ui->responseButton->setText(entites->getNonPlayerCharacterById(ID)->getLastPlayerAnswer());
         }else{
             isJustStarted = true;
+            ui->toMapBtn->setEnabled(true);
         }
     }
 
@@ -81,4 +82,5 @@ void DialogWindow::showEvent(QShowEvent *  /* event */)
 
     ui->textEdit->setPlainText("...");
     ui->responseButton->setText("Поговорить");
+    ui->toMapBtn->setDisabled(true);
 }
