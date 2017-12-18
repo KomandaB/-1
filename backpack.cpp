@@ -4,7 +4,8 @@
 BackPack::BackPack(QWidget *parent, GameEntites *entites,int ID) :
     QWidget(parent),
     ui(new Ui::BackPack),
-    entetis (entites)
+    entetis (entites),
+    CurrentStation(ID)
 {
     ui->setupUi(this);
     connect(ui->go_to_menu, &QPushButton::clicked, this, [=] () { GoToFaitCliked(ID); });//возможно сделать по другому

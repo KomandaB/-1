@@ -27,6 +27,7 @@ private:
     GameEntites *entetis;
 private slots:
     void btn_1_clicked(int ID);
+    void btn_2_clicked(int ID);
     void btn_3_clicked(int id);
     void winClicked();
     void goTuMenuClicked();

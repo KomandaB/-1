@@ -157,4 +157,21 @@ void GameEntites::initItem(){
 void GameEntites::initDealer(){
     DealerMap[0]= Dealer(0,"Вася");
     DealerMap[0].addItem(0);
+    DealerMap[0].addItem(1);
+    DealerMap[0].addItem(2);
+    DealerMap[0].addItem(3);
+    DealerMap[0].addItem(4);
+    DealerMap[1]= Dealer(0,"Игорь");
+    DealerMap[1].addItem(0);
+    DealerMap[2]= Dealer(0,"Вася");
+    DealerMap[2].addItem(0);
+    DealerMap[3]= Dealer(0,"Вася");
+    DealerMap[3].addItem(0);
+    DealerMap[4]= Dealer(0,"Вася");
+    DealerMap[4].addItem(0);
+    DealerMap[5]= Dealer(0,"Вася");
+    DealerMap[5].addItem(0);
+    DealerMap[6]= Dealer(0,"Вася");
+    DealerMap[6].addItem(0);
+
 }

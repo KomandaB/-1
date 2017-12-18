@@ -14,6 +14,7 @@
 #include "dialogwindow.h"
 #include "backpack.h"
 #include "prolog.h"
+#include "dealerwindow.h"
 
 
 namespace Ui {
@@ -36,8 +37,9 @@ private:
     DialogWindow *dialogWindow;
     StationWindow *stationWindow;
     MainMenu *mainMenu;
+    DealerWindow *dealerWindow;
     WinGame *winGame;
-     Prolog * prolog;
+    Prolog * prolog;
     BackPack *backPack;
     FaitWindow *faitWindow;
     QStackedWidget *windowHandler;

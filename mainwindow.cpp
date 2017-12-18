@@ -15,18 +15,21 @@ MainWindow::MainWindow(QWidget *parent) :
     stationWindow = new StationWindow(this,gameHandler->getEntites());
     mainMenu = new MainMenu(this);
     winGame=new WinGame(this);
-    prolog =new Prolog(this);
+    dealerWindow= new DealerWindow(this,gameHandler->getEntites());
+    prolog =new Prolog(this,gameHandler->getEntites());
     backPack =new BackPack(this, gameHandler->getEntites());
     windowHandler = new QStackedWidget(this);
     windowHandler->addWidget(mainMenu);
     windowHandler->addWidget(prolog);
     windowHandler->addWidget(stationWindow);
+    windowHandler->addWidget(dealerWindow);
     windowHandler->addWidget(dialogWindow);
     windowHandler->addWidget(faitWindow);
     windowHandler->addWidget(backPack);
     windowHandler->addWidget(winGame);
     this->setCentralWidget(windowHandler);
     connect(dialogWindow, &DialogWindow::stateChanged, this, &MainWindow::stateChangedSlot);
+    connect(dealerWindow, &DealerWindow::stateChanged, this, &MainWindow::stateChangedSlot);
     connect(faitWindow,&FaitWindow::stateChanged,this,&MainWindow::stateChangedSlot);
     connect(stationWindow, &StationWindow::stateChanged, this, &MainWindow::stateChangedSlot);
     connect(mainMenu, &MainMenu::stateChanged, this, &MainWindow::stateChangedSlot);
@@ -58,6 +61,11 @@ void MainWindow::stateChangedSlot(GraphicStates newState, int ID)
     case GraphicStates::DIALOG: {
         dialogWindow->ChangeCharacterId(ID);
         windowHandler->setCurrentWidget(dialogWindow);
+        break;
+    }
+    case GraphicStates::DIALERWINDOW:{
+        dealerWindow->ChangeDealer(ID);
+        windowHandler->setCurrentWidget(dealerWindow);
         break;
     }
     case GraphicStates::WINGAME: {

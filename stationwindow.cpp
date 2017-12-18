@@ -33,11 +33,12 @@ void StationWindow::ChangeStation(int newId)
     //удаление и добавление
     connect(ui->point_1_btn, &QPushButton::clicked, this, [=](){btn_1_clicked(newId);});
     connect(ui->point_1_btn_2, &QPushButton::clicked, this, [=](){goTuBagClicked(newId);} );
-
+    connect(ui->point_1_btn_3, &QPushButton::clicked, this, [=](){btn_2_clicked(newId);} );
     QVector <int> ToMoveStation;//временный вектор станций на которые мы можем пойти
     ToMoveStation=entetis->getStationById(newId)->getStationsToMove();//.at(0);
     ui->label->setText("Поговорить с человеком");
     ui->label_2->setText("Открыть рюкзак ");
+     ui->label_3->setText("Поговорить с торговцем ");
     ui->textEdit->setText(entetis->getStationById(newId)->getStationInformation());
     ui->textEdit_2->setText("Ты находишься на станции "+ entetis->getStationById(newId)->getStationName());//готовая штука
     ui->StationBackground->setStyleSheet("background-image: url(:/"+entetis->getStationById(newId)->getStationName()+".png);");//нужно сделать динамическое изменеие фона
@@ -96,6 +97,18 @@ void StationWindow::btn_1_clicked(int ID)
 
     qDebug()<<ID<<"IID";
     emit stateChanged(GraphicStates::DIALOG,ID);
+}
+
+void StationWindow::btn_2_clicked(int ID)
+{
+    QLayoutItem *child;
+    while ((child = ui->gridLayout_2->takeAt(0)) != 0) {
+        delete child->widget();
+        delete child;
+    }
+
+
+    emit stateChanged(GraphicStates::DIALERWINDOW,ID);
 }
 
 void StationWindow::btn_3_clicked(int id)

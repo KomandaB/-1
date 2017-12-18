@@ -28,6 +28,7 @@ public:
 private:
     Ui::BackPack *ui;
     GameEntites *entetis;
+    int CurrentStation;
 signals:
     void stateChanged(GraphicStates newState,int ID);
 private slots:

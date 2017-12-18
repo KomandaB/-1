@@ -355,9 +355,9 @@ void FaitWindow::go_to_bandage()
         entites->getGoodCharacterById(0)->set_HP(100);
     }
     }
-    else{ //вывести что их нет
-    }
-changeAtatk(currentMonsterId);
+    else{  ui->Textbatlle->setText(ui->Textbatlle->toPlainText()+ "\n"+  " Аптечки как всегда заканчиваются в неподходящий момент...  ");
+        }
+        update();
 }
 // короче, пока что сделаю прибавку к ХП, потом нужно переделать под защиту
 

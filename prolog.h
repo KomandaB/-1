@@ -20,7 +20,7 @@ class Prolog : public QWidget
     Q_OBJECT
 
 public:
-    explicit Prolog(QWidget *parent = 0);
+    explicit Prolog(QWidget *parent = 0 ,GameEntites *entites=0);
     ~Prolog();
 
 private:

@@ -3,7 +3,7 @@ GameHandler::GameHandler()
 {
      steve=new Player;
      entites= new GameEntites;
-     entites->initGame();//происходит создание всех станций и людей
+    //происходит создание всех станций и людей
    //  entites->initGoodCharacters();
 }
 

@@ -3,7 +3,7 @@
 
 #include <QObject>
 
-enum class GraphicStates {MAIN_MENU, GAME_MAP, DIALOG, WINGAME,FAITWINDOW,BACKPACK,PROLOG};
+enum class GraphicStates {MAIN_MENU, GAME_MAP, DIALOG, WINGAME,FAITWINDOW,BACKPACK,PROLOG,DIALERWINDOW};
 
 class Settings : public QObject
 {
