@@ -6,6 +6,7 @@
 #include "badcharacter.h"
 #include "goodcharacter.h"
 #include "item.h"
+#include "dealer.h"
 
 
 class GameEntites
@@ -17,6 +18,7 @@ public:
     NonPlayerCharacter* getNonPlayerCharacterById(int NpcId);
     Station* getStationById(int stationId);
     Item* getItemById(int ItemId);
+    Dealer* getDealerById(int DealerId);
     void initGame();//почему станции являются публичными, а люди приватными
 
     QHash<int, Station> StationsMap;
@@ -24,9 +26,11 @@ public:
     QHash<int, BadCharacter> BadCharactersMap;
     QHash<int, NonPlayerCharacter> NonPlayerCharactersMap;
     QHash<int, Item*> ItemMap;
+    QHash<int, Dealer> DealerMap;
     void initItem();
     void initBadCharacters();
     void initGoodCharacters();
+    void initDealer();
     void initNonPlayerCharacters();
 private:
 

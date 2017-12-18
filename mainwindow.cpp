@@ -15,7 +15,7 @@ MainWindow::MainWindow(QWidget *parent) :
     stationWindow = new StationWindow(this,gameHandler->getEntites());
     mainMenu = new MainMenu(this);
     winGame=new WinGame(this);
-    backPack =new BackPack(this);
+    backPack =new BackPack(this, gameHandler->getEntites());
     windowHandler = new QStackedWidget(this);
     windowHandler->addWidget(mainMenu);
     windowHandler->addWidget(stationWindow);
@@ -75,6 +75,7 @@ void MainWindow::stateChangedSlot(GraphicStates newState, int ID)
 
     }
     case GraphicStates::BACKPACK: {
+        backPack->ChangeBackpack(ID);
         windowHandler->setCurrentWidget(backPack);
         break;
     }

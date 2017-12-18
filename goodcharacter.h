@@ -20,7 +20,7 @@ private:
     bool game = true;
     QString name;
     int ammunition;
-    QVector<int>Inventory;
+
     StrengthCharacters Strength;
     AgilityCharacters Agility;
     PassiveCharacters PassiveTalents;
@@ -33,10 +33,13 @@ private:
     int attackPoints;
     int speedAttack;
     int Ammunition;
+    int CurrentArmor;
+    int CurrentWearpons;
 
 public:
+     QVector<int>Inventory;
     Goodcharacter();
-    Goodcharacter(int hp,int At,int ar, int Sp, int spat,int miss,int crit, int coins);
+    Goodcharacter(int hp,int At,int ar, int Sp, int spat,int miss,int crit, int coins,int currentArmor,int currentWeapons);
     void addItem(int itemId);
         void set_Strength(int Hp, int At);
 
@@ -45,6 +48,14 @@ public:
         void set_PassiveTalents(int Miss, int Crit, int Steal);
 
         void set_Level(int Lvl, int Exp);
+
+        void set_currentArmor(int Armor);
+
+        int get_currentArmor();
+
+        void set_currentWearpons(int Wearpons);
+
+        int get_currentWearpons();
 
         void set_SetPlayer(Weapons At ,Armor Ar );
 

@@ -5,6 +5,14 @@ GameEntites::GameEntites()
 
 }
 
+Dealer *GameEntites::getDealerById(int DealerId)
+{
+    if (DealerMap.contains(DealerId)){
+        return &DealerMap[DealerId];
+    } else {
+        return nullptr;
+    }
+}
 Goodcharacter *GameEntites::getGoodCharacterById(int GoodCharId)
 {
     if (GoodCharactersMap.contains(GoodCharId)){
@@ -56,6 +64,7 @@ void GameEntites::initGame()
     initBadCharacters();
     initGoodCharacters();
     initNonPlayerCharacters();
+    initDealer();
     QVector<int> stationIds;
     stationIds.push_back(1);
     QVector<int> charIds;
@@ -97,12 +106,15 @@ void GameEntites::initBadCharacters()
 //    GoodCharactersMap[1] = GoodCharacter(1,"Makcim");
 
 
-    BadCharactersMap[0] = BadCharacter(20,30,0,0,0,2,1);// Dangerouse rat
-    BadCharactersMap[1] = BadCharacter(20,40,0,0,0,3,2);//
-    BadCharactersMap[2] = BadCharacter(20,50,0,0,0,3,3);//
-      BadCharactersMap[3] = BadCharacter(20,50,0,0,0,3,3);//
-        BadCharactersMap[4] = BadCharacter(20,50,0,0,0,3,3);//
-          BadCharactersMap[5] = BadCharacter(20,50,0,0,0,3,3);//
+    BadCharactersMap[0] = BadCharacter(50, 15 ,10 , 30, 40 , 2 , 0);// Dangerouse rat 
+    BadCharactersMap[1] = BadCharacter(40, 12 ,5 ,10 , 1 , 3 , 1);// 
+    BadCharactersMap[2] = BadCharacter(40, 12 ,5 ,25 , 10 , 3 , 2);// 
+    BadCharactersMap[3] = BadCharacter(20,50,1,1,1,3, 3 );// 
+    
+    
+    
+    BadCharactersMap[4] = BadCharacter(20,50,10,1,1,3,4);// 
+    BadCharactersMap[5] = BadCharacter(20,50,0,0,0,3,5);//
 //weaponsMap[0]=(12,"ownldwk");
 
     //TODO: INITIALISE MORE
@@ -110,7 +122,7 @@ void GameEntites::initBadCharacters()
 
 void GameEntites::initGoodCharacters()
 {
-    GoodCharactersMap[0]=Goodcharacter(100      ,9      ,10     ,20        ,10           , 5        ,5       ,100);
+    GoodCharactersMap[0]=Goodcharacter(100      ,9      ,10     ,20        ,10           , 5        ,5       ,100,0,1);
     GoodCharactersMap[0].addItem(0);
     GoodCharactersMap[0].addItem(1);
 
@@ -128,6 +140,14 @@ void GameEntites::initNonPlayerCharacters(){
     NonPlayerCharactersMap[1].setPlayerAnswers("Здравствуй мужик, не поможешь мне - фонарик чего-то барахлит next Кто-кто? next Приятно познакомится, Кирилл next Ладно, я пойду, спасибо за помощь, Федор next Мне Охранники посоветовали next Всего доброго");
 }
 void GameEntites::initItem(){
-    ItemMap[0]= new Armor(0,"Assault",3, ItemType::ARMOR, 5);
-    ItemMap[1] = new Weapons(1,"Melee Knife",3, ItemType::WEAPONS, 10);
+    ItemMap[0]= new Armor(0,"Assault",3, ItemType::ARMOR, 5,10);
+    ItemMap[1] = new Weapons(1,"Melee Knife",3, ItemType::WEAPONS, 10,10);
+    ItemMap[2]= new Armor(2,"Assault",3, ItemType::ARMOR, 5,10);
+    ItemMap[3] = new Weapons(3,"Melee Knife",3, ItemType::WEAPONS, 10,10);
+    ItemMap[4]= new Armor(4,"Assault",3, ItemType::ARMOR, 5,10);
+    ItemMap[5] = new Weapons(5,"Melee Knife",3, ItemType::WEAPONS, 10,10);
+}
+void GameEntites::initDealer(){
+    DealerMap[0]= Dealer(0,"Вася");
+    DealerMap[0].addItem(0);
 }

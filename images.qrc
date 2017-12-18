@@ -8,5 +8,7 @@
         <file>Достаевская.png</file>
         <file>Пушкинская.png</file>
         <file>Обводный канал.png</file>
+        <file>dialogWindowBackground.png</file>
+        <file>Дедан.png</file>
     </qresource>
 </RCC>

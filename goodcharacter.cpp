@@ -1,11 +1,13 @@
 #include "goodcharacter.h"
 
 
-Goodcharacter::Goodcharacter(int hp,int At,int ar, int Sp, int spat,int miss,int crit, int coins) :
+Goodcharacter::Goodcharacter(int hp, int At, int ar, int Sp, int spat, int miss, int crit, int coins, int currentArmor, int currentWeapons) :
 
 
    armorPoints (ar),
-   Ammunition (coins)
+   Ammunition (coins),
+   CurrentArmor(currentArmor),
+   CurrentWearpons(currentWeapons)
 
 {
   set_Strength(hp,At);
@@ -48,6 +50,26 @@ void Goodcharacter::set_Level(int Lvl, int Exp)
 {
     Level.set_LVL(Lvl);
     Level.set_ExPoints(Exp);
+}
+
+void Goodcharacter::set_currentArmor(int Armor)
+{
+    CurrentArmor=Armor;
+}
+
+int Goodcharacter::get_currentArmor()
+{
+    return CurrentArmor;
+}
+
+void Goodcharacter::set_currentWearpons(int Wearpons)
+{
+    CurrentWearpons=Wearpons;
+}
+
+int Goodcharacter::get_currentWearpons()
+{
+    return CurrentWearpons;
 }
 void Goodcharacter::set_SetPlayer(Weapons At ,Armor Ar )
 {
